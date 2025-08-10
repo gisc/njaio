@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory Problems - Primary | NJAIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+        .back-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        .problem-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .quiz-container {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            border: 3px solid #ff6b35;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .question-block {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .question-block h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .question-block p {
+            font-size: 16px;
+            color: #34495e;
+            line-height: 1.5;
+        }
+        .options {
+            margin: 15px 0;
+        }
+        .option-label {
+            display: block;
+            padding: 12px;
+            margin: 10px 0;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            border: 2px solid transparent;
+        }
+        .option-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-color: #0984e3;
+        }
+        .option-label input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        #submit-btn, #restart-btn {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 10px 20px 0;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #submit-btn:hover, #restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        #submit-btn:disabled {
+            background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .correct-feedback {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 5px solid #28a745;
+            color: #155724;
+        }
+        .incorrect-feedback {
+            background: linear-gradient(135deg, #f8d7da 0%, #f1b0b7 100%);
+            border-left: 5px solid #dc3545;
+            color: #721c24;
+        }
+        .correct {
+            color: #28a745;
+            font-size: 20px;
+        }
+        .incorrect {
+            color: #dc3545;
+            font-size: 20px;
+        }
+        #results {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+            border: 3px solid #3498db;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #results h3 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .score {
+            font-size: 22px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 15px 0;
+        }
+        .performance {
+            font-size: 18px;
+            color: #34495e;
+            font-style: italic;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="index.html">← Back to Main Page</a>
+    </div>
+    
+    <h1>Theory Problems - Primary Level</h1>
+    
+    <div class="note">
+        <strong>Note:</strong> This page contains sample multiple-choice questions designed for primary school students participating in the National Junior AI Olympiad. Questions will be added closer to the contest date.
+    </div>
+    
+    <h2>Programming & AI Fundamentals</h2>
+    <div class="problem-section">
+        <p><strong>Sample questions will cover:</strong></p>
+        <ul>
+            <li>Basic programming concepts</li>
+            <li>Introduction to artificial intelligence</li>
+            <li>Simple algorithms and logic</li>
+        </ul>
+    </div>
+    
+    <h2>Deep Learning & Neural Networks</h2>
+    <div class="problem-section">
+        <p><strong>Sample questions will cover:</strong></p>
+        <ul>
+            <li>Basic concepts of how computers learn</li>
+            <li>Simple pattern recognition</li>
+            <li>Introduction to neural networks</li>
+        </ul>
+    </div>
+    
+    <h2>Unsupervised Learning & AI Ethics</h2>
+    <div class="problem-section">
+        <p><strong>Sample questions will cover:</strong></p>
+        <ul>
+            <li>Basic understanding of data patterns</li>
+            <li>Simple ethical considerations in AI</li>
+            <li>Responsible use of technology</li>
+        </ul>
+    </div>
+    
+    <h2>Generative AI</h2>
+    <div class="problem-section">
+        <p><strong>Sample questions will cover:</strong></p>
+        <ul>
+            <li>Understanding AI that creates content</li>
+            <li>Basic concepts of text and image generation</li>
+            <li>Simple applications of generative AI</li>
+        </ul>
+    </div>
+    
+    <h2>Real-world AI Applications</h2>
+    <div class="problem-section">
+        <p><strong>Sample questions will cover:</strong></p>
+        <ul>
+            <li>AI in everyday life</li>
+            <li>Smart devices and assistants</li>
+            <li>AI in games and entertainment</li>
+        </ul>
+    </div>
+    
+    <h2>Fun AI Quiz - Test Your Knowledge!</h2>
+    <div class="quiz-container">
+        <div id="quiz-questions"></div>
+        <button id="submit-btn" onclick="submitQuiz()" disabled>Submit My Answers</button>
+        <button id="restart-btn" onclick="restartQuiz()" style="display:none;">Try Again</button>
+        <div id="results" style="display:none;"></div>
+    </div>
+    
+    <script>
+        const questions = [
+            {
+                question: "When you ask Siri or Google Assistant a question, what is the computer trying to do?",
+                options: ["Guess randomly", "Understand your words and find the best answer", "Play music", "Turn off your phone"],
+                correct: 1,
+                explanation: "Smart assistants listen to your words, understand what you're asking, and search for the best answer to help you!"
+            },
+            {
+                question: "Your favorite video app suggests new videos you might like. How does it know what you enjoy?",
+                options: ["It asks your friends", "It picks videos randomly", "It watches what you like and finds similar videos", "It only shows popular videos"],
+                correct: 2,
+                explanation: "The app remembers what videos you watch and like, then finds other videos that are similar to suggest to you!"
+            },
+            {
+                question: "When you take a photo and your phone automatically puts a frame around people's faces, what is happening?",
+                options: ["The phone is guessing", "Someone is watching through the camera", "The computer learned to recognize faces", "It's magic"],
+                correct: 2,
+                explanation: "Your phone has learned to recognize what faces look like by seeing many examples, just like how you learned to recognize your friends!"
+            },
+            {
+                question: "If you wanted to teach a computer to tell the difference between cats and dogs, what would be the best way?",
+                options: ["Show it one picture of each", "Tell it cats say 'meow' and dogs say 'woof'", "Show it many pictures of cats and dogs with labels", "Let it guess randomly"],
+                correct: 2,
+                explanation: "Just like how you learned by seeing many cats and dogs, computers learn best when they see lots of examples with the correct answers!"
+            },
+            {
+                question: "Your tablet suggests the next word when you're typing a message. How does it know what word you might want?",
+                options: ["It reads your mind", "It looks at the words you already typed and predicts what usually comes next", "It picks any random word", "Someone else is typing for you"],
+                correct: 1,
+                explanation: "The tablet has learned from reading millions of sentences and knows which words often go together, helping it guess your next word!"
+            },
+            {
+                question: "When playing a game against the computer, why does the computer sometimes make really good moves?",
+                options: ["It's cheating", "It can see the future", "It has practiced millions of games and learned good strategies", "Someone is controlling it"],
+                correct: 2,
+                explanation: "The computer has played the game many, many times and learned which moves work best in different situations!"
+            },
+            {
+                question: "If an AI system makes a mistake and shows you the wrong answer, what should happen?",
+                options: ["Nothing, mistakes don't matter", "We should fix it and help it learn the right answer", "We should throw away the computer", "We should never use AI again"],
+                correct: 1,
+                explanation: "Just like when you make a mistake in school, we help AI systems learn from their mistakes to get better!"
+            },
+            {
+                question: "Your music app creates a playlist of songs you might like. What information does it probably use?",
+                options: ["Only your age", "Songs you've listened to before and liked", "What your neighbors listen to", "Random songs from the internet"],
+                correct: 1,
+                explanation: "The app looks at what music you enjoy and finds other songs that are similar or by artists you like!"
+            },
+            {
+                question: "When you use a translation app to change English words to Spanish, what is the computer doing?",
+                options: ["Looking up each word in a dictionary", "Asking a Spanish teacher", "Using patterns it learned from millions of translated sentences", "Guessing what the words mean"],
+                correct: 2,
+                explanation: "The app has learned by reading millions of sentences in both languages and understanding how they match up!"
+            },
+            {
+                question: "If you were designing an AI helper for your school, what would be most important?",
+                options: ["Making it as fast as possible", "Making sure it's helpful and fair to all students", "Making it look cool", "Making it expensive"],
+                correct: 1,
+                explanation: "The most important thing is that AI helps everyone fairly and makes things better for all students!"
+            }
+        ];
+        
+        let currentQuestions = [];
+        let userAnswers = [];
+        let quizSubmitted = false;
+        
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+        
+        function initializeQuiz() {
+            currentQuestions = shuffleArray(questions);
+            userAnswers = new Array(currentQuestions.length).fill(-1);
+            quizSubmitted = false;
+            
+            const questionsContainer = document.getElementById('quiz-questions');
+            questionsContainer.innerHTML = '';
+            
+            currentQuestions.forEach((q, index) => {
+                const shuffledOptions = q.options.map((option, optIndex) => ({option, originalIndex: optIndex}));
+                const shuffledOptionsArray = shuffleArray(shuffledOptions);
+                
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question-block';
+                questionDiv.innerHTML = `
+                    <h4>Question ${index + 1}</h4>
+                    <p>${q.question}</p>
+                    <div class="options">
+                        ${shuffledOptionsArray.map((item, optIndex) => `
+                            <label class="option-label">
+                                <input type="radio" name="q${index}" value="${item.originalIndex}" onchange="updateAnswer(${index}, ${item.originalIndex})">
+                                ${item.option}
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div id="feedback-${index}" class="feedback" style="display:none;"></div>
+                `;
+                questionsContainer.appendChild(questionDiv);
+            });
+            
+            document.getElementById('submit-btn').disabled = false;
+            document.getElementById('submit-btn').style.display = 'inline-block';
+            document.getElementById('restart-btn').style.display = 'none';
+            document.getElementById('results').style.display = 'none';
+        }
+        
+        function updateAnswer(questionIndex, answerIndex) {
+            userAnswers[questionIndex] = answerIndex;
+            
+            // Check if all questions are answered
+            const allAnswered = userAnswers.every(answer => answer !== -1);
+            document.getElementById('submit-btn').disabled = !allAnswered;
+        }
+        
+        function submitQuiz() {
+            if (quizSubmitted) return;
+            
+            quizSubmitted = true;
+            let score = 0;
+            
+            currentQuestions.forEach((q, index) => {
+                const feedbackDiv = document.getElementById(`feedback-${index}`);
+                const isCorrect = userAnswers[index] === q.correct;
+                
+                if (isCorrect) {
+                    score++;
+                    feedbackDiv.innerHTML = `<span class="correct">🎉 Great job!</span> ${q.explanation}`;
+                    feedbackDiv.className = 'feedback correct-feedback';
+                } else {
+                    const correctAnswer = q.options[q.correct];
+                    feedbackDiv.innerHTML = `<span class="incorrect">🤔 Not quite right.</span> The best answer is: <strong>${correctAnswer}</strong><br>${q.explanation}`;
+                    feedbackDiv.className = 'feedback incorrect-feedback';
+                }
+                feedbackDiv.style.display = 'block';
+                
+                // Disable radio buttons
+                const radioButtons = document.querySelectorAll(`input[name="q${index}"]`);
+                radioButtons.forEach(radio => radio.disabled = true);
+            });
+            
+            const resultsDiv = document.getElementById('results');
+            const percentage = Math.round((score / currentQuestions.length) * 100);
+            resultsDiv.innerHTML = `
+                <h3>🌟 Your Results 🌟</h3>
+                <p class="score">You got ${score} out of ${currentQuestions.length} questions right!</p>
+                <p class="performance">${getPerformanceMessage(percentage)}</p>
+            `;
+            resultsDiv.style.display = 'block';
+            
+            document.getElementById('submit-btn').style.display = 'none';
+            document.getElementById('restart-btn').style.display = 'inline-block';
+            
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function getPerformanceMessage(percentage) {
+            if (percentage >= 90) return "🏆 Amazing! You really understand how AI works in everyday life!";
+            if (percentage >= 70) return "😊 Well done! You have a good understanding of AI!";
+            if (percentage >= 50) return "👍 Good try! Keep learning about AI - you're on the right track!";
+            return "🌱 Keep exploring! AI is all around us - try the quiz again to learn more!";
+        }
+        
+        function restartQuiz() {
+            initializeQuiz();
+        }
+        
+        // Initialize quiz when page loads
+        document.addEventListener('DOMContentLoaded', initializeQuiz);
+    </script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory Problems Set B - Secondary/JC/Poly/ITE | NJAIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #9b59b6;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+        .back-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #9b59b6;
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .quiz-container {
+            background: linear-gradient(135deg, #a8edea 0%, #74b9ff 50%, #6c5ce7 100%);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            border: 3px solid #0984e3;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .question-block {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .question-block h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .question-block p {
+            font-size: 16px;
+            color: #34495e;
+            line-height: 1.5;
+        }
+        .options {
+            margin: 15px 0;
+        }
+        .option-label {
+            display: block;
+            padding: 12px;
+            margin: 10px 0;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            border: 2px solid transparent;
+        }
+        .option-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-color: #0984e3;
+        }
+        .option-label input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        #submit-btn, #restart-btn {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 10px 20px 0;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #submit-btn:hover, #restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        #submit-btn:disabled {
+            background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .correct-feedback {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 5px solid #28a745;
+            color: #155724;
+        }
+        .incorrect-feedback {
+            background: linear-gradient(135deg, #f8d7da 0%, #f1b0b7 100%);
+            border-left: 5px solid #dc3545;
+            color: #721c24;
+        }
+        .correct {
+            color: #28a745;
+            font-size: 20px;
+        }
+        .incorrect {
+            color: #dc3545;
+            font-size: 20px;
+        }
+        #results {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+            border: 3px solid #3498db;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #results h3 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .score {
+            font-size: 22px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 15px 0;
+        }
+        .performance {
+            font-size: 18px;
+            color: #34495e;
+            font-style: italic;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="index.html">← Back to Main Page</a>
+    </div>
+    
+    <h1>Theory Problems Set B - Secondary/JC/Poly/ITE Level</h1>
+    
+    <div class="note">
+        <strong>Note:</strong> This set focuses on problem-solving and application-based questions that test your ability to apply AI concepts to real-world scenarios and analyze complex situations.
+    </div>
+    
+    <h2>Interactive Quiz - Problem Solving & Applications</h2>
+    
+    <div class="quiz-container">
+        <div id="quiz"></div>
+        <button id="submit-btn" onclick="submitQuiz()" disabled>Submit Quiz</button>
+        <button id="restart-btn" onclick="restartQuiz()" style="display: none;">Try Again</button>
+        <div id="results"></div>
+    </div>
+    
+    <script>
+        const questions = [
+            {
+                question: "A company wants to implement a recommendation system for their e-commerce platform. They have user purchase history, product ratings, and browsing behavior data. Which approach would be most effective for handling the 'cold start' problem for new users?",
+                options: [
+                    "Use only collaborative filtering based on similar users",
+                    "Implement a hybrid system combining content-based filtering with demographic data",
+                    "Rely solely on popularity-based recommendations",
+                    "Use matrix factorization techniques exclusively"
+                ],
+                correct: 1,
+                explanation: "A hybrid approach combining content-based filtering with demographic data is most effective for new users because it doesn't rely on user history (which new users lack) and can make recommendations based on product features and user demographics."
+            },
+            {
+                question: "You're developing an AI system to detect fraudulent credit card transactions. The dataset has 99.8% legitimate transactions and 0.2% fraudulent ones. What is the most critical challenge and how should you address it?",
+                options: [
+                    "High computational cost - use simpler algorithms",
+                    "Class imbalance - use techniques like SMOTE, cost-sensitive learning, or ensemble methods",
+                    "Feature selection - remove all categorical variables",
+                    "Model complexity - always use deep learning"
+                ],
+                correct: 1,
+                explanation: "Class imbalance is the critical challenge. With only 0.2% fraudulent transactions, standard accuracy metrics are misleading. Techniques like SMOTE (synthetic oversampling), cost-sensitive learning, or ensemble methods help the model learn from minority class examples."
+            },
+            {
+                question: "A hospital wants to use AI to predict patient readmission risk. They have concerns about model interpretability for clinical decisions. Which approach balances accuracy and interpretability best?",
+                options: [
+                    "Deep neural networks with maximum layers for highest accuracy",
+                    "Random Forest with feature importance analysis and SHAP values",
+                    "Simple linear regression only",
+                    "Unsupervised clustering without labels"
+                ],
+                correct: 1,
+                explanation: "Random Forest with feature importance and SHAP (SHapley Additive exPlanations) values provides good accuracy while maintaining interpretability. Healthcare requires understanding why predictions are made for clinical decision-making."
+            },
+            {
+                question: "You're building a computer vision system to identify defective products on a manufacturing line. The lighting conditions vary throughout the day, and new product types are occasionally introduced. What strategy would make your system most robust?",
+                options: [
+                    "Train once on initial data and never update",
+                    "Use data augmentation for lighting variations and implement continuous learning with human-in-the-loop validation",
+                    "Only use traditional image processing without machine learning",
+                    "Collect data only during optimal lighting conditions"
+                ],
+                correct: 1,
+                explanation: "Data augmentation helps handle lighting variations, while continuous learning with human validation allows the system to adapt to new product types and changing conditions while maintaining quality control."
+            },
+            {
+                question: "A social media platform wants to implement content moderation AI. They need to balance free speech with harmful content removal across multiple languages and cultures. What is the most important consideration?",
+                options: [
+                    "Use the same model globally without any modifications",
+                    "Implement culturally-aware models with local human oversight and transparent appeal processes",
+                    "Only moderate content in English",
+                    "Rely entirely on user reporting without AI"
+                ],
+                correct: 1,
+                explanation: "Cultural context matters significantly in content interpretation. Culturally-aware models with local human oversight ensure appropriate moderation while transparent appeal processes maintain fairness and user trust."
+            },
+            {
+                question: "You're designing an autonomous vehicle's decision-making system for emergency situations. The car must choose between hitting a barrier (risking passenger safety) or swerving into a bike lane (risking cyclist safety). How should this ethical dilemma be addressed?",
+                options: [
+                    "Always prioritize passenger safety regardless of external consequences",
+                    "Implement transparent ethical frameworks developed through public consultation and regulatory guidance",
+                    "Let the AI decide randomly to avoid bias",
+                    "Always choose the option that minimizes property damage"
+                ],
+                correct: 1,
+                explanation: "Ethical decisions in AI systems should be based on transparent frameworks developed through public consultation and regulatory guidance, ensuring societal values are reflected and decisions are accountable."
+            },
+            {
+                question: "A startup is developing an AI-powered hiring tool. During testing, they discover the model shows bias against certain demographic groups despite not using demographic data directly. What is the most likely cause and solution?",
+                options: [
+                    "The model is working correctly - no action needed",
+                    "Proxy variables (like zip codes, school names) are creating indirect bias - implement bias detection and mitigation techniques",
+                    "Use more complex deep learning models",
+                    "Remove all personal information completely"
+                ],
+                correct: 1,
+                explanation: "Proxy variables can indirectly encode demographic information, leading to biased outcomes. Bias detection techniques and mitigation strategies like adversarial debiasing or fairness constraints are needed."
+            },
+            {
+                question: "You're optimizing a neural network for real-time mobile deployment. The model needs to process images in under 100ms on a smartphone. Which approach would be most effective?",
+                options: [
+                    "Use the largest possible model for maximum accuracy",
+                    "Apply model compression techniques like pruning, quantization, and knowledge distillation",
+                    "Only use traditional computer vision methods",
+                    "Increase the image resolution for better features"
+                ],
+                correct: 1,
+                explanation: "Model compression techniques like pruning (removing unnecessary connections), quantization (reducing precision), and knowledge distillation (training smaller models to mimic larger ones) maintain performance while meeting mobile constraints."
+            },
+            {
+                question: "A financial institution is implementing an AI system for loan approval. Regulators require that decisions be explainable to customers. The current black-box model has 95% accuracy, while an interpretable model has 88% accuracy. What should they prioritize?",
+                options: [
+                    "Always choose the highest accuracy model regardless of explainability",
+                    "Balance accuracy with explainability, potentially using interpretable models with explanation techniques",
+                    "Abandon AI completely and use only human decisions",
+                    "Use the black-box model but provide random explanations"
+                ],
+                correct: 1,
+                explanation: "In regulated industries like finance, explainability is often legally required. The slight accuracy trade-off is worthwhile for compliance, customer trust, and the ability to identify and correct potential biases."
+            },
+            {
+                question: "You're developing a natural language processing system for customer service chatbots. The system needs to handle multiple languages, slang, and evolving language patterns. What architecture would be most suitable?",
+                options: [
+                    "Rule-based system with fixed patterns only",
+                    "Transformer-based models with multilingual pre-training and continuous fine-tuning capabilities",
+                    "Simple keyword matching",
+                    "Translation to English first, then process everything in English"
+                ],
+                correct: 1,
+                explanation: "Transformer-based models with multilingual pre-training can handle multiple languages and context. Continuous fine-tuning allows adaptation to evolving language patterns and domain-specific terminology."
+            }
+        ];
+        
+        let currentQuestions = [];
+        let userAnswers = {};
+        let quizSubmitted = false;
+        
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+        
+        function initializeQuiz() {
+            currentQuestions = shuffleArray(questions);
+            userAnswers = {};
+            quizSubmitted = false;
+            
+            const quizContainer = document.getElementById('quiz');
+            quizContainer.innerHTML = '';
+            
+            currentQuestions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question-block';
+                
+                const shuffledOptions = q.options.map((option, optIndex) => ({option, optIndex}));
+                const shuffledOptionsArray = shuffleArray(shuffledOptions);
+                
+                questionDiv.innerHTML = `
+                    <h4>Question ${index + 1}</h4>
+                    <p>${q.question}</p>
+                    <div class="options">
+                        ${shuffledOptionsArray.map((item, optIndex) => `
+                            <label class="option-label">
+                                <input type="radio" name="q${index}" value="${item.optIndex}" onchange="updateAnswer(${index}, ${item.optIndex})">
+                                ${item.option}
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div id="feedback-${index}" class="feedback" style="display: none;"></div>
+                `;
+                
+                quizContainer.appendChild(questionDiv);
+            });
+            
+            document.getElementById('submit-btn').disabled = true;
+            document.getElementById('restart-btn').style.display = 'none';
+            document.getElementById('results').innerHTML = '';
+        }
+        
+        function updateAnswer(questionIndex, answerIndex) {
+            userAnswers[questionIndex] = answerIndex;
+            
+            const allAnswered = Object.keys(userAnswers).length === currentQuestions.length;
+            document.getElementById('submit-btn').disabled = !allAnswered;
+        }
+        
+        function submitQuiz() {
+            if (quizSubmitted) return;
+            
+            quizSubmitted = true;
+            let score = 0;
+            
+            currentQuestions.forEach((q, index) => {
+                const userAnswer = userAnswers[index];
+                const isCorrect = userAnswer === q.correct;
+                
+                if (isCorrect) score++;
+                
+                const feedbackDiv = document.getElementById(`feedback-${index}`);
+                feedbackDiv.style.display = 'block';
+                feedbackDiv.className = `feedback ${isCorrect ? 'correct-feedback' : 'incorrect-feedback'}`;
+                feedbackDiv.innerHTML = `
+                    <span class="${isCorrect ? 'correct' : 'incorrect'}">
+                        ${isCorrect ? '✓ Correct!' : '✗ Incorrect'}
+                    </span><br>
+                    <strong>Explanation:</strong> ${q.explanation}
+                `;
+            });
+            
+            const percentage = Math.round((score / currentQuestions.length) * 100);
+            let performance = '';
+            
+            if (percentage >= 90) performance = 'Outstanding! You have excellent problem-solving skills in AI applications.';
+            else if (percentage >= 80) performance = 'Great work! You show strong analytical thinking in AI scenarios.';
+            else if (percentage >= 70) performance = 'Good job! You understand most AI application concepts well.';
+            else if (percentage >= 60) performance = 'Fair performance. Consider reviewing AI problem-solving strategies.';
+            else performance = 'Keep studying! Focus on understanding how AI concepts apply to real-world problems.';
+            
+            document.getElementById('results').innerHTML = `
+                <h3>Quiz Results</h3>
+                <div class="score">Score: ${score}/${currentQuestions.length} (${percentage}%)</div>
+                <div class="performance">${performance}</div>
+            `;
+            
+            document.getElementById('submit-btn').style.display = 'none';
+            document.getElementById('restart-btn').style.display = 'inline-block';
+        }
+        
+        function restartQuiz() {
+            document.getElementById('submit-btn').style.display = 'inline-block';
+            initializeQuiz();
+        }
+        
+        // Initialize quiz when page loads
+        window.onload = initializeQuiz;
+    </script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Tasks - Secondary/JC/Poly/ITE | NJAIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #f39c12;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+        .back-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        .task-section {
+            background: linear-gradient(135deg, #a8edea 0%, #74b9ff 50%, #6c5ce7 100%);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            border: 3px solid #0984e3;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .solution-toggle {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .solution-toggle:hover {
+            background: linear-gradient(135deg, #45a049, #3d8b40);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .solution-content {
+            background: #f0f8ff;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        .requirements {
+            background-color: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #27ae60;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="index.html">← Back to Main Page</a>
+    </div>
+    
+    <h1>Practical Tasks - Secondary/JC/Poly/ITE Level</h1>
+    
+    <div class="note">
+        <strong>Note:</strong> This page contains sample Python programming tasks using PyTorch in Jupyter notebooks designed for secondary school, junior college, polytechnic, and ITE students. Actual tasks and notebooks will be provided closer to the contest date.
+    </div>
+    
+    <h2>Programming Environment</h2>
+    <div class="task-section">
+        <p><strong>Contest Environment:</strong></p>
+        <ul>
+            <li>Jupyter Notebook (.ipynb files)</li>
+            <li>Python 3.8+ with PyTorch framework</li>
+            <li>Pre-installed libraries: NumPy, Pandas, Matplotlib, Scikit-learn</li>
+            <li>Access to sample datasets</li>
+        </ul>
+        
+        <div class="requirements">
+            <strong>Required Knowledge:</strong>
+            <ul>
+                <li>Python programming fundamentals</li>
+                <li>Basic understanding of machine learning concepts</li>
+                <li>Familiarity with PyTorch tensors and operations</li>
+                <li>Data manipulation with NumPy and Pandas</li>
+            </ul>
+        </div>
+    </div>
+    
+    <h2>Sample Task Categories</h2>
+    
+    <div class="task-section">
+        <h3>1. Tensor Operations and Data Preprocessing</h3>
+        <p>Students will work with PyTorch tensors and prepare data for machine learning:</p>
+        <div class="code-example">
+            Sample task format:
+            <br># Given a dataset, students might need to:
+            <br>import torch
+            <br>import pandas as pd
+            <br><br># Load and preprocess data
+            <br># Create tensors from data
+            <br># Normalize or transform data
+            <br># Split data into training and testing sets
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>2. Simple Neural Network Implementation</h3>
+        <p>Students will build and train basic neural networks:</p>
+        <div class="code-example">
+            Sample task format:
+            <br>import torch.nn as nn
+            <br>import torch.optim as optim
+            <br><br># Define a simple neural network
+            <br># Implement forward pass
+            <br># Set up loss function and optimizer
+            <br># Train the model for specified epochs
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>3. Computer Vision Tasks</h3>
+        <p>Students will work with image data and convolutional neural networks:</p>
+        <div class="code-example">
+            Sample task format:
+            <br>import torchvision
+            <br>import torchvision.transforms as transforms
+            <br><br># Load image datasets
+            <br># Apply data augmentation
+            <br># Build CNN architecture
+            <br># Train image classifier
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>4. Natural Language Processing</h3>
+        <p>Students will process text data and build simple NLP models:</p>
+        <div class="code-example">
+            Sample task format:
+            <br># Text preprocessing and tokenization
+            <br># Word embeddings and vocabulary building
+            <br># Simple RNN or LSTM implementation
+            <br># Text classification or sentiment analysis
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>5. Model Evaluation and Analysis</h3>
+        <p>Students will evaluate model performance and interpret results:</p>
+        <div class="code-example">
+            Sample task format:
+            <br># Calculate accuracy, precision, recall
+            <br># Generate confusion matrices
+            <br># Plot training/validation curves
+            <br># Analyze model predictions and errors
+        </div>
+    </div>
+    
+    <h2>Sample Practice Problems</h2>
+    
+    <div class="task-section">
+        <h3>Problem 1: Tensor Operations (Medium)</h3>
+        <p><strong>Instructions:</strong> Trace through this neural network weight calculation and write down all outputs.</p>
+        <div class="code-example">
+            import numpy as np<br>
+            <br>
+            # Input layer with 3 neurons<br>
+            inputs = np.array([0.5, 0.8, 0.2])<br>
+            weights = np.array([[0.1, 0.4], [0.3, 0.2], [0.6, 0.5]])<br>
+            bias = np.array([0.1, 0.3])<br>
+            <br>
+            print("Input values:", inputs)<br>
+            print("Weight matrix shape:", weights.shape)<br>
+            <br>
+            # Calculate weighted sum<br>
+            weighted_sum = np.dot(inputs, weights)<br>
+            print("Weighted sum:", weighted_sum)<br>
+            <br>
+            # Add bias<br>
+            output = weighted_sum + bias<br>
+            print("Final output:", output)<br>
+            <br>
+            # Apply activation function (ReLU)<br>
+            activated_output = np.maximum(0, output)<br>
+            print("After ReLU activation:", activated_output)
+        </div>
+        <p><strong>Your Answer:</strong></p>
+        <p>Line 1: ___________________________</p>
+        <p>Line 2: ___________________________</p>
+        <p>Line 3: ___________________________</p>
+        <p>Line 4: ___________________________</p>
+        <p>Line 5: ___________________________</p>
+        <button class="solution-toggle" onclick="toggleSolution('solution1')">Show Solution</button>
+        <div id="solution1" class="solution-content" style="display: none;">
+            <p><strong>Solution:</strong><br>
+            Input values: [0.5 0.8 0.2]<br>
+            Weight matrix shape: (3, 2)<br>
+            Weighted sum: [0.41 0.54]<br>
+            Final output: [0.51 0.84]<br>
+            After ReLU activation: [0.51 0.84]</p>
+            <p><strong>AI Connection:</strong> This demonstrates the fundamental forward pass in neural networks. Each neuron receives weighted inputs, adds bias, and applies an activation function. This exact process happens millions of times in deep learning models like ChatGPT, image recognition systems, and recommendation engines. Understanding tensor operations is crucial for AI development.</p>
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>Problem 2: Training Loop with Gradient Descent (Hard)</h3>
+        <p><strong>Instructions:</strong> This program simulates a simple machine learning training process. Trace through 3 iterations and record all outputs.</p>
+        <div class="code-example">
+            # Simple linear regression training<br>
+            weight = 0.5<br>
+            learning_rate = 0.1<br>
+            target = 2.0<br>
+            <br>
+            training_data = [(1.0, 2.0), (2.0, 4.0), (3.0, 6.0)]<br>
+            <br>
+            for epoch in range(3):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(f"Epoch {epoch + 1}:")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;total_loss = 0<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;for x, y_true in training_data:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Forward pass<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y_pred = weight * x<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loss = (y_pred - y_true) ** 2<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total_loss += loss<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Backward pass (gradient calculation)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gradient = 2 * (y_pred - y_true) * x<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;weight = weight - learning_rate * gradient<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"  Input: {x}, Predicted: {y_pred:.2f}, Actual: {y_true}, Loss: {loss:.2f}")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(f"  Updated weight: {weight:.3f}, Total loss: {total_loss:.2f}")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print()
+        </div>
+        <p><strong>Your Answer:</strong></p>
+        <p>Epoch 1 outputs: ___________________________</p>
+        <p>Epoch 2 outputs: ___________________________</p>
+        <p>Epoch 3 outputs: ___________________________</p>
+        <button class="solution-toggle" onclick="toggleSolution('solution2')">Show Solution</button>
+        <div id="solution2" class="solution-content" style="display: none;">
+            <p><strong>Solution:</strong><br>
+            Epoch 1:<br>
+            &nbsp;&nbsp;Input: 1.0, Predicted: 0.50, Actual: 2.0, Loss: 2.25<br>
+            &nbsp;&nbsp;Input: 2.0, Predicted: 1.70, Actual: 4.0, Loss: 5.29<br>
+            &nbsp;&nbsp;Input: 3.0, Predicted: 4.44, Actual: 6.0, Loss: 2.43<br>
+            &nbsp;&nbsp;Updated weight: 1.956, Total loss: 9.97<br>
+            <br>
+            Epoch 2:<br>
+            &nbsp;&nbsp;Input: 1.0, Predicted: 1.96, Actual: 2.0, Loss: 0.00<br>
+            &nbsp;&nbsp;Input: 2.0, Predicted: 3.91, Actual: 4.0, Loss: 0.01<br>
+            &nbsp;&nbsp;Input: 3.0, Predicted: 5.85, Actual: 6.0, Loss: 0.02<br>
+            &nbsp;&nbsp;Updated weight: 1.998, Total loss: 0.03<br>
+            <br>
+            Epoch 3:<br>
+            &nbsp;&nbsp;Input: 1.0, Predicted: 2.00, Actual: 2.0, Loss: 0.00<br>
+            &nbsp;&nbsp;Input: 2.0, Predicted: 4.00, Actual: 4.0, Loss: 0.00<br>
+            &nbsp;&nbsp;Input: 3.0, Predicted: 5.99, Actual: 6.0, Loss: 0.00<br>
+            &nbsp;&nbsp;Updated weight: 2.000, Total loss: 0.00</p>
+            <p><strong>AI Connection:</strong> This shows the core of machine learning - how AI systems learn from data through gradient descent. The model starts with random weights and gradually adjusts them to minimize prediction errors. This same principle powers everything from image recognition to language models, just with millions of parameters instead of one.</p>
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>Problem 3: Convolutional Neural Network Feature Detection (Expert)</h3>
+        <p><strong>Instructions:</strong> This program simulates edge detection in computer vision. Trace through the convolution operation and write the output feature map.</p>
+        <div class="code-example">
+            import numpy as np<br>
+            <br>
+            # 4x4 input image (grayscale values)<br>
+            image = np.array([[1, 1, 0, 0],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1, 1, 0, 0],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1, 1, 0, 0],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1, 1, 0, 0]])<br>
+            <br>
+            # 3x3 edge detection filter (vertical edge detector)<br>
+            filter_kernel = np.array([[-1, 0, 1],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1, 0, 1],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1, 0, 1]])<br>
+            <br>
+            print("Input image:")<br>
+            print(image)<br>
+            print("\nFilter kernel:")<br>
+            print(filter_kernel)<br>
+            <br>
+            # Perform convolution (2x2 output)<br>
+            output = np.zeros((2, 2))<br>
+            <br>
+            for i in range(2):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;for j in range(2):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Extract 3x3 region<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;region = image[i:i+3, j:j+3]<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Element-wise multiplication and sum<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conv_result = np.sum(region * filter_kernel)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output[i, j] = conv_result<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"Position ({i},{j}): {conv_result}")<br>
+            <br>
+            print("\nOutput feature map:")<br>
+            print(output)
+        </div>
+        <p><strong>Your Answer:</strong></p>
+        <p>Position (0,0): ___________________________</p>
+        <p>Position (0,1): ___________________________</p>
+        <p>Position (1,0): ___________________________</p>
+        <p>Position (1,1): ___________________________</p>
+        <p>Final feature map: ___________________________</p>
+        <button class="solution-toggle" onclick="toggleSolution('solution3')">Show Solution</button>
+        <div id="solution3" class="solution-content" style="display: none;">
+            <p><strong>Solution:</strong><br>
+            Input image:<br>
+            [[1 1 0 0]<br>
+            &nbsp;[1 1 0 0]<br>
+            &nbsp;[1 1 0 0]<br>
+            &nbsp;[1 1 0 0]]<br>
+            <br>
+            Filter kernel:<br>
+            [[-1  0  1]<br>
+            &nbsp;[-1  0  1]<br>
+            &nbsp;[-1  0  1]]<br>
+            <br>
+            Position (0,0): -3<br>
+            Position (0,1): -3<br>
+            Position (1,0): -3<br>
+            Position (1,1): -3<br>
+            <br>
+            Output feature map:<br>
+            [[-3. -3.]<br>
+            &nbsp;[-3. -3.]]</p>
+            <p><strong>AI Connection:</strong> This demonstrates how Convolutional Neural Networks (CNNs) detect features in images. The negative values indicate a strong vertical edge detection between the white (1) and black (0) regions. Modern AI vision systems like autonomous cars, medical imaging, and facial recognition use thousands of such filters to detect edges, shapes, textures, and complex patterns at multiple scales.</p>
+        </div>
+    </div>
+    
+    <h2>Contest Format</h2>
+    <div class="task-section">
+        <p><strong>During the contest, students will:</strong></p>
+        <ul>
+            <li>Receive Jupyter notebook templates with partially completed code</li>
+            <li>Complete missing code sections to solve AI/ML problems</li>
+            <li>Debug and optimize existing code</li>
+            <li>Analyze results and answer interpretation questions</li>
+        </ul>
+        
+        <p><strong>Time Allocation:</strong> Approximately 45 minutes for programming tasks within the 1-hour contest.</p>
+        
+        <p><strong>Evaluation Criteria:</strong></p>
+        <ul>
+            <li>Code correctness and functionality</li>
+            <li>Model performance on test data</li>
+            <li>Code efficiency and best practices</li>
+            <li>Understanding of AI/ML concepts demonstrated</li>
+        </ul>
+        
+        <p><strong>Difficulty Levels:</strong></p>
+        <ul>
+            <li><strong>Medium:</strong> Basic neural network operations and tensor manipulations</li>
+            <li><strong>Hard:</strong> Training algorithms with gradient descent and optimization</li>
+            <li><strong>Expert:</strong> Advanced architectures like CNNs with multi-dimensional operations</li>
+        </ul>
+    </div>
+    
+    <h2>Preparation Resources</h2>
+    <div class="task-section">
+        <p><strong>Recommended Study Materials:</strong></p>
+        <ul>
+            <li>PyTorch official tutorials and documentation</li>
+            <li>Python programming fundamentals</li>
+            <li>Introduction to machine learning concepts</li>
+            <li>Jupyter notebook usage and best practices</li>
+        </ul>
+        
+        <p><strong>Practice Datasets:</strong></p>
+        <ul>
+            <li>MNIST handwritten digits</li>
+            <li>CIFAR-10 image classification</li>
+            <li>Simple text classification datasets</li>
+            <li>Tabular data for regression/classification</li>
+        </ul>
+    </div>
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            const button = solution.previousElementSibling;
+            
+            if (solution.style.display === 'none') {
+                solution.style.display = 'block';
+                button.textContent = 'Hide Solution';
+            } else {
+                solution.style.display = 'none';
+                button.textContent = 'Show Solution';
+            }
+        }
+    </script>
+</body>
+</html>

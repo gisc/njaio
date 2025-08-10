@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Tasks - Primary | NJAIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+        .back-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        .task-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            border: 3px solid #ff6b35;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .solution-toggle {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .solution-toggle:hover {
+            background: linear-gradient(135deg, #45a049, #3d8b40);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .solution-content {
+            background: #f0f8ff;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="index.html">← Back to Main Page</a>
+    </div>
+    
+    <h1>Practical Tasks - Primary Level</h1>
+    
+    <div class="note">
+        <strong>Note:</strong> This page contains sample program tracing tasks designed for primary school students. Students will be asked to trace through simple programs and predict their output. Actual tasks will be added closer to the contest date.
+    </div>
+    
+    <h2>Program Tracing Overview</h2>
+    <div class="task-section">
+        <p><strong>What is Program Tracing?</strong></p>
+        <p>Program tracing involves following the execution of a program step by step to understand what it does and predict its output. This helps develop logical thinking and understanding of how computers execute instructions.</p>
+        
+        <p><strong>Skills Tested:</strong></p>
+        <ul>
+            <li>Following sequential instructions</li>
+            <li>Understanding loops and repetition</li>
+            <li>Tracking variable changes</li>
+            <li>Predicting program output</li>
+        </ul>
+    </div>
+    
+    <h2>Sample Task Types</h2>
+    
+    <div class="task-section">
+        <h3>1. Simple Sequential Programs</h3>
+        <p>Students will trace through programs with basic operations:</p>
+        <div class="code-example">
+            Example format:
+            <br>x = 5
+            <br>y = 3
+            <br>result = x + y
+            <br>print(result)
+            <br><br>Question: What will be printed?
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>2. Programs with Loops</h3>
+        <p>Students will trace through simple loops:</p>
+        <div class="code-example">
+            Example format:
+            <br>for i in range(3):
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;print(i)
+            <br><br>Question: What will be the complete output?
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>3. Programs with Conditions</h3>
+        <p>Students will trace through programs with if-else statements:</p>
+        <div class="code-example">
+            Example format:
+            <br>age = 10
+            <br>if age >= 12:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;print("Teenager")
+            <br>else:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;print("Child")
+            <br><br>Question: What will be printed?
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>4. Simple AI-Related Programs</h3>
+        <p>Students will trace through programs that demonstrate basic AI concepts:</p>
+        <div class="code-example">
+            Example format:
+            <br>scores = [85, 92, 78, 96]
+            <br>total = 0
+            <br>for score in scores:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;total = total + score
+            <br>average = total / 4
+            <br>print(average)
+            <br><br>Question: What average will be calculated and printed?
+        </div>
+    </div>
+    
+    <h2>Sample Practice Problems</h2>
+    
+    <div class="task-section">
+        <h3>Problem 1: Basic Operations (Easy)</h3>
+        <p><strong>Instructions:</strong> Trace through the following program and write down what will be printed.</p>
+        <div class="code-example">
+            robot_energy = 100<br>
+            robot_energy = robot_energy - 20<br>
+            robot_energy = robot_energy + 10<br>
+            print("Robot energy:", robot_energy)<br>
+            <br>
+            if robot_energy > 50:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("Robot is ready!")<br>
+            else:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("Robot needs charging")
+        </div>
+        <p><strong>Your Answer:</strong> ___________________________</p>
+        <button class="solution-toggle" onclick="toggleSolution('solution1')">Show Solution</button>
+        <div id="solution1" class="solution-content" style="display: none;">
+            <p><strong>Solution:</strong> Robot energy: 90<br>Robot is ready!</p>
+            <p><strong>AI Connection:</strong> This problem demonstrates how AI systems track and manage resources. Real AI robots use similar logic to monitor their battery levels and make decisions about when to recharge or continue working. The conditional logic (if-else) is fundamental to how AI makes decisions based on current conditions.</p>
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>Problem 2: Loops and Counting (Medium)</h3>
+        <p><strong>Instructions:</strong> Trace through this program that counts smart devices in a home. Write down all the output.</p>
+        <div class="code-example">
+            smart_devices = ["phone", "tablet", "speaker", "watch"]<br>
+            device_count = 0<br>
+            <br>
+            for device in smart_devices:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;device_count = device_count + 1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("Found device:", device)<br>
+            <br>
+            print("Total smart devices:", device_count)<br>
+            <br>
+            if device_count >= 3:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("This is a smart home!")
+        </div>
+        <p><strong>Your Answer:</strong></p>
+        <p>Line 1: ___________________________</p>
+        <p>Line 2: ___________________________</p>
+        <p>Line 3: ___________________________</p>
+        <p>Line 4: ___________________________</p>
+        <p>Line 5: ___________________________</p>
+        <p>Line 6: ___________________________</p>
+        <button class="solution-toggle" onclick="toggleSolution('solution2')">Show Solution</button>
+        <div id="solution2" class="solution-content" style="display: none;">
+            <p><strong>Solution:</strong><br>
+            Found device: phone<br>
+            Found device: tablet<br>
+            Found device: speaker<br>
+            Found device: watch<br>
+            Total smart devices: 4<br>
+            This is a smart home!</p>
+            <p><strong>AI Connection:</strong> This program shows how AI systems process and count data collections. Smart home AI assistants use similar loops to inventory connected devices, analyze usage patterns, and make recommendations. The counting and classification logic here is the same principle used in AI systems that manage Internet of Things (IoT) devices.</p>
+        </div>
+    </div>
+    
+    <div class="task-section">
+        <h3>Problem 3: AI Decision Making (Hard)</h3>
+        <p><strong>Instructions:</strong> This program simulates an AI assistant making recommendations. Trace through it carefully and write down all output.</p>
+        <div class="code-example">
+            user_age = 12<br>
+            user_interests = ["games", "science", "art"]<br>
+            recommendations = []<br>
+            <br>
+            for interest in user_interests:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if interest == "games":<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if user_age < 13:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recommendations.append("Educational games")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recommendations.append("Strategy games")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;elif interest == "science":<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recommendations.append("Science experiments")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;elif interest == "art":<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recommendations.append("Digital art tools")<br>
+            <br>
+            print("AI Recommendations for you:")<br>
+            for recommendation in recommendations:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("-", recommendation)<br>
+            <br>
+            total_recommendations = len(recommendations)<br>
+            print("Total suggestions:", total_recommendations)
+        </div>
+        <p><strong>Your Answer:</strong></p>
+        <p>Line 1: ___________________________</p>
+        <p>Line 2: ___________________________</p>
+        <p>Line 3: ___________________________</p>
+        <p>Line 4: ___________________________</p>
+        <p>Line 5: ___________________________</p>
+        <button class="solution-toggle" onclick="toggleSolution('solution3')">Show Solution</button>
+        <div id="solution3" class="solution-content" style="display: none;">
+            <p><strong>Solution:</strong><br>
+            AI Recommendations for you:<br>
+            - Educational games<br>
+            - Science experiments<br>
+            - Digital art tools<br>
+            Total suggestions: 3</p>
+            <p><strong>AI Connection:</strong> This program demonstrates a simplified recommendation system, which is at the heart of modern AI applications like Netflix, YouTube, and Amazon. The nested conditional logic shows how AI considers multiple factors (age, interests) to personalize suggestions. Real recommendation AI uses much more complex algorithms, but the basic principle of analyzing user data to make tailored suggestions is the same.</p>
+        </div>
+    </div>
+    
+    <h2>Contest Format</h2>
+    <div class="task-section">
+        <p><strong>During the contest, students will:</strong></p>
+        <ul>
+            <li>Receive printed program code similar to the examples above</li>
+            <li>Trace through the execution step by step</li>
+            <li>Write down the expected output</li>
+            <li>Answer questions about program behavior</li>
+        </ul>
+        
+        <p><strong>Time Allocation:</strong> Approximately 30 minutes for program tracing tasks within the 1-hour contest.</p>
+        
+        <p><strong>Difficulty Levels:</strong></p>
+        <ul>
+            <li><strong>Easy:</strong> Simple variable operations and basic conditionals</li>
+            <li><strong>Medium:</strong> Loops with counting and list processing</li>
+            <li><strong>Hard:</strong> Nested conditionals with AI-themed scenarios</li>
+        </ul>
+    </div>
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            const button = solution.previousElementSibling;
+            
+            if (solution.style.display === 'none') {
+                solution.style.display = 'block';
+                button.textContent = 'Hide Solution';
+            } else {
+                solution.style.display = 'none';
+                button.textContent = 'Show Solution';
+            }
+        }
+    </script>
+</body>
+</html>

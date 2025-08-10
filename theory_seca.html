@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory Problems - Secondary/JC/Poly/ITE | NJAIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #9b59b6;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+        .back-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        .problem-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #9b59b6;
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .quiz-container {
+            background: linear-gradient(135deg, #a8edea 0%, #74b9ff 50%, #6c5ce7 100%);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            border: 3px solid #0984e3;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .question-block {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .question-block h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .question-block p {
+            font-size: 16px;
+            color: #34495e;
+            line-height: 1.5;
+        }
+        .options {
+            margin: 15px 0;
+        }
+        .option-label {
+            display: block;
+            padding: 12px;
+            margin: 10px 0;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            border: 2px solid transparent;
+        }
+        .option-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-color: #0984e3;
+        }
+        .option-label input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        #submit-btn, #restart-btn {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 10px 20px 0;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #submit-btn:hover, #restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        #submit-btn:disabled {
+            background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .correct-feedback {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 5px solid #28a745;
+            color: #155724;
+        }
+        .incorrect-feedback {
+            background: linear-gradient(135deg, #f8d7da 0%, #f1b0b7 100%);
+            border-left: 5px solid #dc3545;
+            color: #721c24;
+        }
+        .correct {
+            color: #28a745;
+            font-size: 20px;
+        }
+        .incorrect {
+            color: #dc3545;
+            font-size: 20px;
+        }
+        #results {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+            border: 3px solid #3498db;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #results h3 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .score {
+            font-size: 22px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 15px 0;
+        }
+        .performance {
+            font-size: 18px;
+            color: #34495e;
+            font-style: italic;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="index.html">← Back to Main Page</a>
+    </div>
+    
+    <h1>Theory Problems - Secondary/JC/Poly/ITE Level</h1>
+    
+    <div class="note">
+        <strong>Note:</strong> This page contains sample multiple-choice questions designed for secondary school, junior college, polytechnic, and ITE students participating in the National Junior AI Olympiad.
+    </div>
+    
+    <h2>Programming & AI Fundamentals</h2>
+    <div class="problem-section">
+        <p><strong>Sample questions will cover:</strong></p>
+        <ul>
+            <li>Advanced programming concepts and data structures</li>
+            <li>Machine learning algorithms and their applications</li>
+            <li>Computational complexity and optimization</li>
+            <li>AI problem-solving techniques</li>
+        </ul>
+    </div>
+    
+    <h2>Deep Learning & Neural Networks</h2>
+    <div class="problem-section">
+        <p><strong>Sample questions will cover:</strong></p>
+        <ul>
+            <li>Neural network architectures (CNN, RNN, Transformers)</li>
+            <li>Backpropagation and gradient descent</li>
+            <li>Activation functions and loss functions</li>
+            <li>Overfitting, regularization, and model evaluation</li>
+        </ul>
+    </div>
+    
+    <h2>Unsupervised Learning & AI Ethics</h2>
+    <div class="problem-section">
+        <p><strong>Sample questions will cover:</strong></p>
+        <ul>
+            <li>Clustering algorithms (K-means, hierarchical clustering)</li>
+            <li>Dimensionality reduction (PCA, t-SNE)</li>
+            <li>AI bias, fairness, and transparency</li>
+            <li>Privacy and data protection in AI systems</li>
+        </ul>
+    </div>
+    
+    <h2>Generative AI</h2>
+    <div class="problem-section">
+        <p><strong>Sample questions will cover:</strong></p>
+        <ul>
+            <li>Generative Adversarial Networks (GANs)</li>
+            <li>Variational Autoencoders (VAEs)</li>
+            <li>Large Language Models and Transformers</li>
+            <li>Diffusion models and image generation</li>
+        </ul>
+    </div>
+    
+    <h2>Real-world AI Applications</h2>
+    <div class="problem-section">
+        <p><strong>Sample questions will cover:</strong></p>
+        <ul>
+            <li>Computer vision and image processing</li>
+            <li>Natural language processing and sentiment analysis</li>
+            <li>Recommendation systems and collaborative filtering</li>
+            <li>AI in healthcare, finance, and autonomous systems</li>
+        </ul>
+    </div>
+    
+    <h2>Interactive Quiz - Try It Now!</h2>
+    <div class="quiz-container">
+        <div id="quiz-questions"></div>
+        <button id="submit-btn" onclick="submitQuiz()" disabled>Submit Quiz</button>
+        <button id="restart-btn" onclick="restartQuiz()" style="display:none;">Try Again</button>
+        <div id="results" style="display:none;"></div>
+    </div>
+    
+    <script>
+        const questions = [
+            {
+                question: "Which activation function is most commonly used in hidden layers of deep neural networks?",
+                options: ["Sigmoid", "ReLU", "Tanh", "Linear"],
+                correct: 1,
+                explanation: "ReLU (Rectified Linear Unit) is widely used because it helps mitigate the vanishing gradient problem and is computationally efficient."
+            },
+            {
+                question: "What is the primary purpose of backpropagation in neural networks?",
+                options: ["Forward pass computation", "Weight initialization", "Gradient calculation for weight updates", "Data preprocessing"],
+                correct: 2,
+                explanation: "Backpropagation calculates gradients of the loss function with respect to weights, enabling the network to learn through gradient descent."
+            },
+            {
+                question: "Which clustering algorithm requires you to specify the number of clusters beforehand?",
+                options: ["DBSCAN", "K-means", "Hierarchical clustering", "Mean shift"],
+                correct: 1,
+                explanation: "K-means clustering requires you to specify the parameter 'k' (number of clusters) before running the algorithm."
+            },
+            {
+                question: "What does GAN stand for in deep learning?",
+                options: ["General Adversarial Network", "Generative Adversarial Network", "Gradient Adversarial Network", "Global Adversarial Network"],
+                correct: 1,
+                explanation: "GAN stands for Generative Adversarial Network, consisting of a generator and discriminator that compete against each other."
+            },
+            {
+                question: "Which technique is used to prevent overfitting in neural networks?",
+                options: ["Increasing learning rate", "Adding more layers", "Dropout regularization", "Removing validation data"],
+                correct: 2,
+                explanation: "Dropout randomly sets some neurons to zero during training, preventing the model from becoming too dependent on specific neurons."
+            },
+            {
+                question: "What is the main advantage of using Convolutional Neural Networks (CNNs) for image processing?",
+                options: ["Faster training", "Translation invariance and parameter sharing", "Smaller model size", "Better text processing"],
+                correct: 1,
+                explanation: "CNNs use convolution operations that provide translation invariance and share parameters across spatial locations, making them ideal for images."
+            },
+            {
+                question: "Which dimensionality reduction technique preserves the global structure of high-dimensional data?",
+                options: ["PCA", "t-SNE", "LDA", "ICA"],
+                correct: 0,
+                explanation: "PCA (Principal Component Analysis) preserves global variance structure by finding principal components that capture maximum variance."
+            },
+            {
+                question: "What is a key ethical concern when deploying AI systems in hiring processes?",
+                options: ["Processing speed", "Algorithmic bias and fairness", "Storage requirements", "Network latency"],
+                correct: 1,
+                explanation: "Algorithmic bias can lead to unfair discrimination against certain groups, making fairness a critical ethical consideration in AI hiring systems."
+            },
+            {
+                question: "Which type of learning does not require labeled training data?",
+                options: ["Supervised learning", "Reinforcement learning", "Unsupervised learning", "Semi-supervised learning"],
+                correct: 2,
+                explanation: "Unsupervised learning finds patterns in data without labeled examples, using techniques like clustering and dimensionality reduction."
+            },
+            {
+                question: "What is the purpose of attention mechanisms in transformer models?",
+                options: ["Reduce model size", "Focus on relevant parts of input sequence", "Speed up training", "Prevent overfitting"],
+                correct: 1,
+                explanation: "Attention mechanisms allow the model to focus on different parts of the input sequence when generating each output, improving performance on sequential tasks."
+            }
+        ];
+        
+        let currentQuestions = [];
+        let userAnswers = [];
+        let quizSubmitted = false;
+        
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+        
+        function initializeQuiz() {
+            currentQuestions = shuffleArray(questions);
+            userAnswers = new Array(currentQuestions.length).fill(-1);
+            quizSubmitted = false;
+            
+            const questionsContainer = document.getElementById('quiz-questions');
+            questionsContainer.innerHTML = '';
+            
+            currentQuestions.forEach((q, index) => {
+                const shuffledOptions = q.options.map((option, optIndex) => ({option, originalIndex: optIndex}));
+                const shuffledOptionsArray = shuffleArray(shuffledOptions);
+                
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question-block';
+                questionDiv.innerHTML = `
+                    <h4>Question ${index + 1}</h4>
+                    <p>${q.question}</p>
+                    <div class="options">
+                        ${shuffledOptionsArray.map((item, optIndex) => `
+                            <label class="option-label">
+                                <input type="radio" name="q${index}" value="${item.originalIndex}" onchange="updateAnswer(${index}, ${item.originalIndex})">
+                                ${item.option}
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div id="feedback-${index}" class="feedback" style="display:none;"></div>
+                `;
+                questionsContainer.appendChild(questionDiv);
+            });
+            
+            document.getElementById('submit-btn').disabled = false;
+            document.getElementById('submit-btn').style.display = 'inline-block';
+            document.getElementById('restart-btn').style.display = 'none';
+            document.getElementById('results').style.display = 'none';
+        }
+        
+        function updateAnswer(questionIndex, answerIndex) {
+            userAnswers[questionIndex] = answerIndex;
+            
+            // Check if all questions are answered
+            const allAnswered = userAnswers.every(answer => answer !== -1);
+            document.getElementById('submit-btn').disabled = !allAnswered;
+        }
+        
+        function submitQuiz() {
+            if (quizSubmitted) return;
+            
+            quizSubmitted = true;
+            let score = 0;
+            
+            currentQuestions.forEach((q, index) => {
+                const feedbackDiv = document.getElementById(`feedback-${index}`);
+                const isCorrect = userAnswers[index] === q.correct;
+                
+                if (isCorrect) {
+                    score++;
+                    feedbackDiv.innerHTML = `<span class="correct">✓ Correct!</span> ${q.explanation}`;
+                    feedbackDiv.className = 'feedback correct-feedback';
+                } else {
+                    const correctAnswer = q.options[q.correct];
+                    feedbackDiv.innerHTML = `<span class="incorrect">✗ Incorrect.</span> The correct answer is: <strong>${correctAnswer}</strong><br>${q.explanation}`;
+                    feedbackDiv.className = 'feedback incorrect-feedback';
+                }
+                feedbackDiv.style.display = 'block';
+                
+                // Disable radio buttons
+                const radioButtons = document.querySelectorAll(`input[name="q${index}"]`);
+                radioButtons.forEach(radio => radio.disabled = true);
+            });
+            
+            const resultsDiv = document.getElementById('results');
+            const percentage = Math.round((score / currentQuestions.length) * 100);
+            resultsDiv.innerHTML = `
+                <h3>Quiz Results</h3>
+                <p class="score">Your Score: ${score}/${currentQuestions.length} (${percentage}%)</p>
+                <p class="performance">${getPerformanceMessage(percentage)}</p>
+            `;
+            resultsDiv.style.display = 'block';
+            
+            document.getElementById('submit-btn').style.display = 'none';
+            document.getElementById('restart-btn').style.display = 'inline-block';
+            
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function getPerformanceMessage(percentage) {
+            if (percentage >= 90) return "Excellent! You have a strong understanding of AI concepts.";
+            if (percentage >= 70) return "Good job! You have a solid grasp of the fundamentals.";
+            if (percentage >= 50) return "Not bad! Consider reviewing the topics you missed.";
+            return "Keep studying! Review the explanations and try again.";
+        }
+        
+        function restartQuiz() {
+            initializeQuiz();
+        }
+        
+        // Initialize quiz when page loads
+        document.addEventListener('DOMContentLoaded', initializeQuiz);
+    </script>
+</body>
+</html>
