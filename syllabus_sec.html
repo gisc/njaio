@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI Curriculum - Secondary School</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        .navigation {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .nav-link:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .grade-section {
+            margin-bottom: 50px;
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            padding: 25px;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+        }
+        
+        .grade-title {
+            color: #c0392b;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 15px;
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 8px;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .curriculum-overview {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .curriculum-overview h3 {
+            color: #c0392b;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .curriculum-overview ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .curriculum-overview li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #2c3e50;
+        }
+        
+        .curriculum-overview li:before {
+            content: "🎯";
+            position: absolute;
+            left: 0;
+        }
+        
+        .mcq-container {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .question {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            padding: 10px;
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 5px;
+        }
+        
+        .options {
+            margin-bottom: 15px;
+        }
+        
+        .option {
+            padding: 10px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .option:hover {
+            background: #e9ecef;
+            border-color: #adb5bd;
+        }
+        
+        .show-answers-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+        
+        .show-answers-btn:hover {
+            background: #c0392b;
+        }
+        
+        .explanation {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            border-radius: 0 5px 5px 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .answers-hidden {
+            display: none;
+        }
+        
+        .answers-visible {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .grade-title {
+                font-size: 1.5em;
+            }
+            
+            .nav-link {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Generative AI Curriculum</h1>
+            <p>Secondary School (Grades 7-12) - Building Advanced AI Understanding</p>
+        </div>
+        
+        <div class="navigation">
+            <a href="syllabus_pri.html" class="nav-link">Primary School</a>
+            <a href="syllabus_sec.html" class="nav-link">Secondary School</a>
+            <a href="syllabus.html" class="nav-link">Complete Curriculum</a>
+        </div>
+        
+        <div class="content">
+            <div class="grade-section">
+                <h2 class="grade-title">Secondary 1 (Grade 7) - Introduction to Generative AI</h2>
+                <div class="curriculum-overview">
+                    <h3>Learning Objectives:</h3>
+                    <ul>
+                        <li>Understand what generative AI is and how it differs from other AI</li>
+                        <li>Learn about basic neural networks and deep learning</li>
+                        <li>Explore text generation and language models</li>
+                        <li>Practice using AI tools responsibly</li>
+                    </ul>
+                </div>
+                
+                <h3>Assessment Questions:</h3>
+                
+                <div class="mcq-container">
+                    <div class="question">1. What is generative AI?</div>
+                    <div class="options">
+                        <div class="option" data-correct="true">A) AI that creates new content like text, images, or music</div>
+                        <div class="option" data-correct="false">B) AI that only analyzes existing data</div>
+                        <div class="option" data-correct="false">C) AI that controls robots</div>
+                        <div class="option" data-correct="false">D) AI that plays video games</div>
+                    </div>
+                    <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                    <div class="explanation answers-hidden">
+                        <strong>Correct Answer: A</strong><br>
+                        A) ✓ Generative AI creates new content by learning patterns from training data.<br>
+                        B) ✗ This describes analytical AI, not generative AI.<br>
+                        C) ✗ Robot control is a different application of AI technology.<br>
+                        D) ✗ Game-playing AI is typically not generative in nature.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Secondary 2 (Grade 8) -->
+        <div class="grade-section">
+            <h2 class="grade-title">Secondary 2 (Grade 8) - Computer Vision and Image Processing</h2>
+            <div class="curriculum-overview">
+                <h3>Learning Objectives:</h3>
+                <ul>
+                    <li>Understand how computers "see" and process images</li>
+                    <li>Learn about convolutional neural networks (CNNs)</li>
+                    <li>Explore image classification and object detection</li>
+                    <li>Practice with image preprocessing and data augmentation</li>
+                </ul>
+            </div>
+            
+            <h3>Assessment Questions:</h3>
+            
+            <div class="mcq-container">
+                <div class="question">1. What is computer vision?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) The field of AI that enables computers to interpret and understand visual information</div>
+                    <div class="option" data-correct="false">B) A computer's ability to see in the dark</div>
+                    <div class="option" data-correct="false">C) Software for improving computer screen quality</div>
+                    <div class="option" data-correct="false">D) A type of computer monitor</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Computer vision processes visual data to extract meaningful information.<br>
+                    B) ✗ Night vision is about light sensitivity, not AI image processing.<br>
+                    C) ✗ Display enhancement is hardware/software optimization, not computer vision.<br>
+                    D) ✗ Monitors are output devices, not vision processing systems.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">2. What is a convolutional neural network (CNN)?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) A type of neural network designed for processing grid-like data such as images</div>
+                    <div class="option" data-correct="false">B) A network that connects computers</div>
+                    <div class="option" data-correct="false">C) A twisted or coiled network cable</div>
+                    <div class="option" data-correct="false">D) A network for conversations</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ CNNs use convolution operations to detect features in images effectively.<br>
+                    B) ✗ Computer networks are for connectivity, not image processing.<br>
+                    C) ✗ Physical cable shapes are unrelated to neural network architecture.<br>
+                    D) ✗ Conversation networks would be for natural language, not computer vision.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">3. What is a convolution operation in image processing?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Applying a filter to detect features like edges or patterns in an image</div>
+                    <div class="option" data-correct="false">B) Rotating an image</div>
+                    <div class="option" data-correct="false">C) Changing image colors</div>
+                    <div class="option" data-correct="false">D) Resizing an image</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Convolution uses kernels/filters to extract features from images.<br>
+                    B) ✗ Rotation is a geometric transformation, not convolution.<br>
+                    C) ✗ Color changes are pixel value modifications, not convolution.<br>
+                    D) ✗ Resizing is scaling, not convolution.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">4. What is image classification?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Determining what category or object an image contains</div>
+                    <div class="option" data-correct="false">B) Organizing images in folders</div>
+                    <div class="option" data-correct="false">C) Making images secret or classified</div>
+                    <div class="option" data-correct="false">D) Sorting images by size</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Image classification assigns labels or categories to images based on their content.<br>
+                    B) ✗ File organization is a manual task, not AI classification.<br>
+                    C) ✗ Security classification is about access control, not content recognition.<br>
+                    D) ✗ Size sorting is based on file properties, not image content.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">5. What is object detection?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Finding and locating specific objects within an image</div>
+                    <div class="option" data-correct="false">B) Detecting computer viruses</div>
+                    <div class="option" data-correct="false">C) Finding lost physical objects</div>
+                    <div class="option" data-correct="false">D) Detecting file corruption</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Object detection identifies and localizes multiple objects in images with bounding boxes.<br>
+                    B) ✗ Virus detection is cybersecurity, not computer vision.<br>
+                    C) ✗ Physical object location is not computer vision.<br>
+                    D) ✗ File corruption detection is data integrity, not image analysis.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">6. What is image preprocessing?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Preparing images for analysis by cleaning and standardizing them</div>
+                    <div class="option" data-correct="false">B) Taking photos before an event</div>
+                    <div class="option" data-correct="false">C) Printing images</div>
+                    <div class="option" data-correct="false">D) Deleting images</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Preprocessing includes normalization, resizing, and noise reduction for better analysis.<br>
+                    B) ✗ This refers to timing of photography, not data preparation.<br>
+                    C) ✗ Printing is physical output, not digital preprocessing.<br>
+                    D) ✗ Deletion is data management, not preprocessing.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">7. What is data augmentation in computer vision?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Creating variations of existing images to increase training data</div>
+                    <div class="option" data-correct="false">B) Making images bigger in file size</div>
+                    <div class="option" data-correct="false">C) Adding more cameras</div>
+                    <div class="option" data-correct="false">D) Increasing image resolution</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Augmentation applies transformations like rotation and flipping to expand datasets.<br>
+                    B) ✗ File size increase is compression-related, not augmentation.<br>
+                    C) ✗ Hardware addition is not data augmentation.<br>
+                    D) ✗ Resolution enhancement is upscaling, not augmentation.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">8. What is a feature map in CNNs?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) The output of applying a filter to an image</div>
+                    <div class="option" data-correct="false">B) A map showing image locations</div>
+                    <div class="option" data-correct="false">C) A list of image features</div>
+                    <div class="option" data-correct="false">D) A diagram of the neural network</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Feature maps show where specific features are detected in the input image.<br>
+                    B) ✗ Geographic maps are unrelated to neural network feature maps.<br>
+                    C) ✗ Text lists are different from spatial feature representations.<br>
+                    D) ✗ Network diagrams show architecture, not feature detection results.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">9. What is pooling in CNNs?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Reducing the size of feature maps while keeping important information</div>
+                    <div class="option" data-correct="false">B) Swimming in a pool</div>
+                    <div class="option" data-correct="false">C) Combining multiple images</div>
+                    <div class="option" data-correct="false">D) Sharing computer resources</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Pooling operations like max pooling downsample feature maps for efficiency.<br>
+                    B) ✗ Physical swimming is unrelated to neural network operations.<br>
+                    C) ✗ Image combination is different from pooling operations.<br>
+                    D) ✗ Resource sharing is system administration, not CNN pooling.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">10. What is transfer learning in computer vision?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Using a pre-trained model and adapting it for a new task</div>
+                    <div class="option" data-correct="false">B) Moving images between computers</div>
+                    <div class="option" data-correct="false">C) Converting image formats</div>
+                    <div class="option" data-correct="false">D) Transferring ownership of images</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Transfer learning leverages existing knowledge to solve related problems efficiently.<br>
+                    B) ✗ File transfer is data movement, not machine learning.<br>
+                    C) ✗ Format conversion is file processing, not transfer learning.<br>
+                    D) ✗ Ownership transfer is legal/business, not machine learning.
+                </div>
+            </div>
+        </div>
+         
+         <!-- Secondary 3 (Grade 9) -->
+        <div class="grade-section">
+            <h2 class="grade-title">Secondary 3 (Grade 9) - Natural Language Processing</h2>
+            <div class="curriculum-overview">
+                <h3>Learning Objectives:</h3>
+                <ul>
+                    <li>Understand how computers process and understand human language</li>
+                    <li>Learn about text preprocessing and tokenization</li>
+                    <li>Explore sentiment analysis and language models</li>
+                    <li>Practice with text classification and generation</li>
+                </ul>
+            </div>
+            
+            <h3>Assessment Questions:</h3>
+            
+            <div class="mcq-container">
+                <div class="question">1. What is Natural Language Processing (NLP)?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) The field of AI that helps computers understand human language</div>
+                    <div class="option" data-correct="false">B) A programming language for natural sciences</div>
+                    <div class="option" data-correct="false">C) A method for processing natural resources</div>
+                    <div class="option" data-correct="false">D) A way to make computers speak naturally</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ NLP enables computers to analyze, understand, and generate human language.<br>
+                    B) ✗ Programming languages are for coding, not natural language understanding.<br>
+                    C) ✗ Natural resource processing is environmental science, not NLP.<br>
+                    D) ✗ While speech synthesis is part of NLP, it's not the complete definition.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">2. What is tokenization in NLP?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Breaking text into smaller units like words or sentences</div>
+                    <div class="option" data-correct="false">B) Creating digital tokens for payment</div>
+                    <div class="option" data-correct="false">C) Encrypting text for security</div>
+                    <div class="option" data-correct="false">D) Converting text to numbers</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Tokenization splits text into manageable pieces for processing.<br>
+                    B) ✗ Digital payment tokens are unrelated to text processing.<br>
+                    C) ✗ Encryption is for security, not text analysis.<br>
+                    D) ✗ While numbers are involved, tokenization is about segmentation.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">3. What is sentiment analysis?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Determining the emotional tone or opinion in text</div>
+                    <div class="option" data-correct="false">B) Analyzing people's feelings through facial expressions</div>
+                    <div class="option" data-correct="false">C) Studying emotional psychology</div>
+                    <div class="option" data-correct="false">D) Measuring physical sensations</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Sentiment analysis classifies text as positive, negative, or neutral.<br>
+                    B) ✗ Facial expression analysis is computer vision, not text analysis.<br>
+                    C) ✗ Psychology studies emotions, but sentiment analysis is computational.<br>
+                    D) ✗ Physical sensations are not related to text sentiment.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">4. What is a language model?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) An AI system that predicts and generates text</div>
+                    <div class="option" data-correct="false">B) A person who models for language learning books</div>
+                    <div class="option" data-correct="false">C) A template for learning new languages</div>
+                    <div class="option" data-correct="false">D) A dictionary of words</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Language models learn patterns in text to predict and generate human-like language.<br>
+                    B) ✗ Human models are for visual representation, not AI systems.<br>
+                    C) ✗ Learning templates are educational tools, not AI models.<br>
+                    D) ✗ Dictionaries store definitions, not predictive language patterns.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">5. What is text classification?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Automatically categorizing text into predefined groups</div>
+                    <div class="option" data-correct="false">B) Organizing books in a library</div>
+                    <div class="option" data-correct="false">C) Making text secret or classified</div>
+                    <div class="option" data-correct="false">D) Sorting text by length</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Text classification assigns labels like spam/not spam or topic categories.<br>
+                    B) ✗ Library organization is manual cataloging, not automated classification.<br>
+                    C) ✗ Security classification is about access control, not content categorization.<br>
+                    D) ✗ Length sorting is a simple property, not semantic classification.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">6. What are stop words in NLP?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Common words like 'the', 'and', 'is' that are often filtered out</div>
+                    <div class="option" data-correct="false">B) Words that make you stop reading</div>
+                    <div class="option" data-correct="false">C) Forbidden or inappropriate words</div>
+                    <div class="option" data-correct="false">D) Words at the end of sentences</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Stop words are frequently occurring words that often don't carry significant meaning.<br>
+                    B) ✗ Reading interruption is not related to NLP stop words.<br>
+                    C) ✗ Inappropriate content filtering is different from stop word removal.<br>
+                    D) ✗ Sentence position is not what defines stop words.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">7. What is named entity recognition (NER)?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Identifying and classifying names of people, places, organizations in text</div>
+                    <div class="option" data-correct="false">B) Recognizing famous people's names</div>
+                    <div class="option" data-correct="false">C) Finding spelling errors in names</div>
+                    <div class="option" data-correct="false">D) Creating names for new entities</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ NER extracts and categorizes named entities from unstructured text.<br>
+                    B) ✗ Celebrity recognition is a subset, not the full scope of NER.<br>
+                    C) ✗ Spell checking is different from entity recognition.<br>
+                    D) ✗ Name generation is not recognition of existing entities.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">8. What is machine translation?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Automatically converting text from one language to another</div>
+                    <div class="option" data-correct="false">B) Moving machines between countries</div>
+                    <div class="option" data-correct="false">C) Translating machine manuals</div>
+                    <div class="option" data-correct="false">D) Converting speech to text</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Machine translation uses AI to translate text between different languages.<br>
+                    B) ✗ Physical machine movement is logistics, not language translation.<br>
+                    C) ✗ Manual translation is human work, not machine translation.<br>
+                    D) ✗ Speech-to-text is speech recognition, not translation between languages.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">9. What is text generation?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Creating new text content using AI models</div>
+                    <div class="option" data-correct="false">B) Typing text on a keyboard</div>
+                    <div class="option" data-correct="false">C) Printing text on paper</div>
+                    <div class="option" data-correct="false">D) Reading text aloud</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Text generation produces human-like text based on learned patterns.<br>
+                    B) ✗ Manual typing is human input, not AI generation.<br>
+                    C) ✗ Printing is output formatting, not content creation.<br>
+                    D) ✗ Text-to-speech is audio conversion, not text generation.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">10. What is the purpose of word embeddings?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Converting words into numerical vectors that capture meaning</div>
+                    <div class="option" data-correct="false">B) Embedding words into images</div>
+                    <div class="option" data-correct="false">C) Hiding words in secret messages</div>
+                    <div class="option" data-correct="false">D) Placing words inside other words</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Word embeddings represent words as dense vectors where similar words have similar vectors.<br>
+                    B) ✗ Visual embedding is different from semantic word representation.<br>
+                    C) ✗ Steganography is about hiding information, not word representation.<br>
+                    D) ✗ Physical word placement is not related to mathematical embeddings.
+                </div>
+            </div>
+        </div>
+         
+         <!-- Secondary 4 (Grade 10) -->
+        <div class="grade-section">
+            <h2 class="grade-title">Secondary 4 (Grade 10) - Reinforcement Learning and AI Agents</h2>
+            <div class="curriculum-overview">
+                <h3>Learning Objectives:</h3>
+                <ul>
+                    <li>Understand the basics of reinforcement learning</li>
+                    <li>Learn about agents, environments, and rewards</li>
+                    <li>Explore different learning strategies and algorithms</li>
+                    <li>Practice with simple RL scenarios and games</li>
+                </ul>
+            </div>
+            
+            <h3>Assessment Questions:</h3>
+            
+            <div class="mcq-container">
+                <div class="question">1. What is reinforcement learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Learning through trial and error with rewards and punishments</div>
+                    <div class="option" data-correct="false">B) Learning by memorizing correct answers</div>
+                    <div class="option" data-correct="false">C) Learning by copying other students</div>
+                    <div class="option" data-correct="false">D) Learning by reading textbooks</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ RL agents learn optimal behavior through interaction and feedback.<br>
+                    B) ✗ Memorization is supervised learning, not reinforcement learning.<br>
+                    C) ✗ Imitation learning is different from reinforcement learning.<br>
+                    D) ✗ Reading is passive learning, not interactive trial-and-error.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">2. What is an agent in reinforcement learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) The learner that takes actions in an environment</div>
+                    <div class="option" data-correct="false">B) A human teacher providing guidance</div>
+                    <div class="option" data-correct="false">C) A secret spy in the system</div>
+                    <div class="option" data-correct="false">D) A software bug</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ The agent is the decision-maker that learns from environmental feedback.<br>
+                    B) ✗ Human teachers are not part of the RL agent-environment framework.<br>
+                    C) ✗ Espionage agents are unrelated to machine learning agents.<br>
+                    D) ✗ Bugs are errors, not learning entities.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">3. What is a reward in reinforcement learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Feedback signal indicating how good an action was</div>
+                    <div class="option" data-correct="false">B) Money given to programmers</div>
+                    <div class="option" data-correct="false">C) A prize for winning a competition</div>
+                    <div class="option" data-correct="false">D) A gift for good behavior</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Rewards guide the agent toward optimal behavior through positive/negative feedback.<br>
+                    B) ✗ Programmer compensation is unrelated to RL rewards.<br>
+                    C) ✗ Competition prizes are external motivators, not RL signals.<br>
+                    D) ✗ Behavioral gifts are human psychology, not computational feedback.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">4. What is the environment in reinforcement learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) The world or system that the agent interacts with</div>
+                    <div class="option" data-correct="false">B) The physical room where computers are located</div>
+                    <div class="option" data-correct="false">C) The weather conditions outside</div>
+                    <div class="option" data-correct="false">D) The programming language used</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ The environment provides states, accepts actions, and returns rewards.<br>
+                    B) ✗ Physical computer locations are infrastructure, not RL environments.<br>
+                    C) ✗ Weather is external conditions, not the learning environment.<br>
+                    D) ✗ Programming languages are tools, not RL environments.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">5. What is a policy in reinforcement learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) A strategy that defines what action to take in each state</div>
+                    <div class="option" data-correct="false">B) A company rule about computer usage</div>
+                    <div class="option" data-correct="false">C) A government regulation</div>
+                    <div class="option" data-correct="false">D) An insurance contract</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ A policy maps states to actions, representing the agent's behavior.<br>
+                    B) ✗ Corporate policies are organizational rules, not RL strategies.<br>
+                    C) ✗ Government regulations are legal frameworks, not learning policies.<br>
+                    D) ✗ Insurance contracts are financial agreements, not RL policies.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">6. What is Q-learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) A method to learn the value of actions in different states</div>
+                    <div class="option" data-correct="false">B) Learning about the letter Q</div>
+                    <div class="option" data-correct="false">C) A type of questioning technique</div>
+                    <div class="option" data-correct="false">D) Learning in a queue or line</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Q-learning estimates Q-values (quality of state-action pairs) to find optimal policies.<br>
+                    B) ✗ Alphabet learning is unrelated to Q-learning algorithms.<br>
+                    C) ✗ Questioning techniques are communication skills, not RL algorithms.<br>
+                    D) ✗ Queue management is about waiting lines, not value learning.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">7. What is exploration vs exploitation in RL?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Trying new actions vs using known good actions</div>
+                    <div class="option" data-correct="false">B) Exploring caves vs exploiting resources</div>
+                    <div class="option" data-correct="false">C) Space exploration vs business exploitation</div>
+                    <div class="option" data-correct="false">D) Exploring websites vs exploiting security</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Balancing exploration of new possibilities with exploitation of known rewards.<br>
+                    B) ✗ Physical exploration and resource extraction are unrelated to RL concepts.<br>
+                    C) ✗ Space and business activities are not RL exploration/exploitation.<br>
+                    D) ✗ Web browsing and security exploitation are different contexts.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">8. What is a state in reinforcement learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) A description of the current situation in the environment</div>
+                    <div class="option" data-correct="false">B) A geographical region like Texas or California</div>
+                    <div class="option" data-correct="false">C) The condition of being solid, liquid, or gas</div>
+                    <div class="option" data-correct="false">D) An emotional condition like happy or sad</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ States represent the current configuration or situation the agent observes.<br>
+                    B) ✗ Geographic states are political divisions, not RL states.<br>
+                    C) ✗ Physical states of matter are chemistry, not RL concepts.<br>
+                    D) ✗ Emotional states are psychology, not RL environment descriptions.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">9. What is the goal of reinforcement learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) To maximize cumulative reward over time</div>
+                    <div class="option" data-correct="false">B) To minimize the time spent learning</div>
+                    <div class="option" data-correct="false">C) To use as little memory as possible</div>
+                    <div class="option" data-correct="false">D) To make the code as short as possible</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ RL aims to find policies that maximize expected cumulative rewards.<br>
+                    B) ✗ Learning speed is efficiency, not the primary RL objective.<br>
+                    C) ✗ Memory optimization is a technical constraint, not the learning goal.<br>
+                    D) ✗ Code brevity is programming style, not RL optimization target.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">10. Which of these is a common application of reinforcement learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Game playing (like chess or video games)</div>
+                    <div class="option" data-correct="false">B) Spell checking documents</div>
+                    <div class="option" data-correct="false">C) Storing files on a computer</div>
+                    <div class="option" data-correct="false">D) Printing documents</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Games provide clear rules, states, actions, and rewards perfect for RL.<br>
+                    B) ✗ Spell checking uses pattern matching, not reinforcement learning.<br>
+                    C) ✗ File storage is data management, not sequential decision-making.<br>
+                    D) ✗ Printing is hardware control, not learning-based optimization.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Junior College 1 (Grade 11) -->
+        <div class="grade-section">
+            <h2 class="grade-title">Junior College 1 (Grade 11) - Advanced Neural Networks and Transformers</h2>
+            <div class="curriculum-overview">
+                <h3>Learning Objectives:</h3>
+                <ul>
+                    <li>Understand advanced neural network architectures</li>
+                    <li>Learn about attention mechanisms and transformers</li>
+                    <li>Explore modern deep learning techniques</li>
+                    <li>Practice with state-of-the-art AI models</li>
+                </ul>
+            </div>
+            
+            <h3>Assessment Questions:</h3>
+            
+            <div class="mcq-container">
+                <div class="question">1. What is a transformer in AI?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) A neural network architecture that uses attention mechanisms</div>
+                    <div class="option" data-correct="false">B) A robot that changes into a car</div>
+                    <div class="option" data-correct="false">C) An electrical device that changes voltage</div>
+                    <div class="option" data-correct="false">D) A tool for converting file formats</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Transformers revolutionized NLP by using self-attention instead of recurrence.<br>
+                    B) ✗ Toy robots are entertainment, not AI architectures.<br>
+                    C) ✗ Electrical transformers are power equipment, not neural networks.<br>
+                    D) ✗ File converters are utilities, not machine learning models.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">2. What is attention in neural networks?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) A mechanism that focuses on relevant parts of input data</div>
+                    <div class="option" data-correct="false">B) Making sure the computer is paying attention</div>
+                    <div class="option" data-correct="false">C) A way to get students to focus in class</div>
+                    <div class="option" data-correct="false">D) Looking carefully at the screen</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Attention mechanisms allow models to selectively focus on important information.<br>
+                    B) ✗ Computer awareness is not what attention mechanisms do.<br>
+                    C) ✗ Classroom management is education, not neural network design.<br>
+                    D) ✗ Visual focus is human behavior, not computational attention.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">3. What does BERT stand for?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Bidirectional Encoder Representations from Transformers</div>
+                    <div class="option" data-correct="false">B) Basic Educational Reading Tool</div>
+                    <div class="option" data-correct="false">C) Big Electronic Robot Technology</div>
+                    <div class="option" data-correct="false">D) Binary Encoded Retrieval Technique</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ BERT is a transformer-based model that reads text bidirectionally.<br>
+                    B) ✗ Educational tools are not what BERT represents.<br>
+                    C) ✗ Robot technology is not related to BERT's language processing.<br>
+                    D) ✗ Binary encoding is not what BERT's acronym means.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">4. What is self-attention?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) When a model attends to different parts of its own input</div>
+                    <div class="option" data-correct="false">B) When someone pays attention to themselves in a mirror</div>
+                    <div class="option" data-correct="false">C) A form of meditation or mindfulness</div>
+                    <div class="option" data-correct="false">D) Focusing on your own thoughts</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Self-attention allows each position to attend to all positions in the input sequence.<br>
+                    B) ✗ Mirror self-awareness is psychology, not neural network mechanisms.<br>
+                    C) ✗ Meditation practices are mental exercises, not computational attention.<br>
+                    D) ✗ Introspection is human cognition, not machine learning attention.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">5. What is GPT?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Generative Pre-trained Transformer</div>
+                    <div class="option" data-correct="false">B) General Purpose Tool</div>
+                    <div class="option" data-correct="false">C) Graphics Processing Technology</div>
+                    <div class="option" data-correct="false">D) Global Positioning Tracker</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ GPT models are transformer-based language models trained to generate text.<br>
+                    B) ✗ General tools are not what GPT specifically refers to.<br>
+                    C) ✗ Graphics processing is GPU technology, not GPT models.<br>
+                    D) ✗ GPS tracking is navigation, not language generation.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">6. What is fine-tuning in deep learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Adapting a pre-trained model for a specific task</div>
+                    <div class="option" data-correct="false">B) Adjusting the volume on speakers</div>
+                    <div class="option" data-correct="false">C) Making small repairs to equipment</div>
+                    <div class="option" data-correct="false">D) Tuning a musical instrument</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Fine-tuning adjusts pre-trained model weights for specific downstream tasks.<br>
+                    B) ✗ Audio adjustment is sound engineering, not machine learning.<br>
+                    C) ✗ Equipment repair is maintenance, not model adaptation.<br>
+                    D) ✗ Musical tuning is about pitch, not neural network training.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">7. What is transfer learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Using knowledge from one task to help with another task</div>
+                    <div class="option" data-correct="false">B) Moving files from one computer to another</div>
+                    <div class="option" data-correct="false">C) Changing schools or classes</div>
+                    <div class="option" data-correct="false">D) Learning how to transfer money</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Transfer learning leverages pre-trained models to solve related problems.<br>
+                    B) ✗ File transfer is data movement, not knowledge transfer.<br>
+                    C) ✗ Educational transitions are administrative, not machine learning.<br>
+                    D) ✗ Financial transfers are banking, not AI learning techniques.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">8. What is a multi-head attention mechanism?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Multiple attention mechanisms working in parallel</div>
+                    <div class="option" data-correct="false">B) A creature with multiple heads paying attention</div>
+                    <div class="option" data-correct="false">C) Multiple people paying attention to the same thing</div>
+                    <div class="option" data-correct="false">D) A multi-screen computer setup</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Multi-head attention runs several attention mechanisms simultaneously for richer representations.<br>
+                    B) ✗ Mythical creatures are not related to neural network architectures.<br>
+                    C) ✗ Group attention is social behavior, not computational mechanisms.<br>
+                    D) ✗ Multiple monitors are hardware setup, not attention mechanisms.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">9. What is the purpose of positional encoding?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) To give transformers information about word order</div>
+                    <div class="option" data-correct="false">B) To encode the position of objects in images</div>
+                    <div class="option" data-correct="false">C) To track the location of files on a computer</div>
+                    <div class="option" data-correct="false">D) To encode GPS coordinates</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Positional encoding adds sequence order information since transformers don't inherently understand position.<br>
+                    B) ✗ Object position in images is computer vision, not sequence modeling.<br>
+                    C) ✗ File system locations are storage management, not sequence encoding.<br>
+                    D) ✗ GPS coordinates are geographic positioning, not sequence position.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">10. What is the main advantage of transformers over RNNs?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) They can process sequences in parallel rather than sequentially</div>
+                    <div class="option" data-correct="false">B) They use less electricity</div>
+                    <div class="option" data-correct="false">C) They are smaller in size</div>
+                    <div class="option" data-correct="false">D) They are easier to program</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Parallel processing makes transformers much faster to train than sequential RNNs.<br>
+                    B) ✗ Power consumption depends on implementation, not architecture type.<br>
+                    C) ✗ Model size varies by configuration, not architecture choice.<br>
+                    D) ✗ Programming difficulty depends on framework and experience, not architecture.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Junior College 2 (Grade 12) -->
+        <div class="grade-section">
+            <h2 class="grade-title">Junior College 2 (Grade 12) - AI Research and Future Directions</h2>
+            <div class="curriculum-overview">
+                <h3>Learning Objectives:</h3>
+                <ul>
+                    <li>Explore cutting-edge AI research areas</li>
+                    <li>Understand current challenges and limitations</li>
+                    <li>Learn about AI safety and alignment</li>
+                    <li>Discuss future possibilities and career paths</li>
+                </ul>
+            </div>
+            
+            <h3>Assessment Questions:</h3>
+            
+            <div class="mcq-container">
+                <div class="question">1. What is Artificial General Intelligence (AGI)?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) AI that can understand and learn any intellectual task like humans</div>
+                    <div class="option" data-correct="false">B) AI that works for the general public</div>
+                    <div class="option" data-correct="false">C) AI that is generally good at everything</div>
+                    <div class="option" data-correct="false">D) AI that follows general rules</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ AGI refers to AI with human-level cognitive abilities across all domains.<br>
+                    B) ✗ Public accessibility is not what defines AGI.<br>
+                    C) ✗ General competence is vague, AGI specifically means human-level intelligence.<br>
+                    D) ✗ Rule-following is narrow AI behavior, not general intelligence.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">2. What is AI alignment?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Ensuring AI systems pursue goals that benefit humanity</div>
+                    <div class="option" data-correct="false">B) Making sure AI components are physically straight</div>
+                    <div class="option" data-correct="false">C) Aligning text in AI-generated documents</div>
+                    <div class="option" data-correct="false">D) Synchronizing multiple AI systems</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ AI alignment ensures AI systems act in accordance with human values and intentions.<br>
+                    B) ✗ Physical alignment is mechanical engineering, not AI safety.<br>
+                    C) ✗ Text formatting is document processing, not AI alignment.<br>
+                    D) ✗ System synchronization is coordination, not value alignment.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">3. What is the AI control problem?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) The challenge of maintaining human control over advanced AI systems</div>
+                    <div class="option" data-correct="false">B) Problems with TV remote controls for AI devices</div>
+                    <div class="option" data-correct="false">C) Controlling AI with joysticks and buttons</div>
+                    <div class="option" data-correct="false">D) Managing AI software licenses</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ The control problem addresses how to ensure powerful AI remains beneficial and controllable.<br>
+                    B) ✗ Device remote controls are user interface issues, not AI control problems.<br>
+                    C) ✗ Physical control interfaces are hardware design, not AI safety concerns.<br>
+                    D) ✗ Software licensing is legal compliance, not AI control challenges.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">4. What is explainable AI (XAI)?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) AI systems that can explain their decisions and reasoning</div>
+                    <div class="option" data-correct="false">B) AI that is easy to understand for beginners</div>
+                    <div class="option" data-correct="false">C) AI that explains things to humans</div>
+                    <div class="option" data-correct="false">D) AI with good documentation</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ XAI provides transparency into how AI models make decisions.<br>
+                    B) ✗ Beginner-friendly AI is about education, not explainability.<br>
+                    C) ✗ AI tutoring is application, not self-explanation capability.<br>
+                    D) ✗ Documentation is external description, not internal explainability.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">5. What is federated learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Training AI models across multiple devices without sharing raw data</div>
+                    <div class="option" data-correct="false">B) Learning about federal government systems</div>
+                    <div class="option" data-correct="false">C) AI learning from federation starships</div>
+                    <div class="option" data-correct="false">D) Collaborative learning between countries</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Federated learning enables distributed training while preserving data privacy.<br>
+                    B) ✗ Government studies are political science, not machine learning.<br>
+                    C) ✗ Science fiction references are not related to federated learning.<br>
+                    D) ✗ International cooperation is diplomacy, not distributed ML training.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">6. What is quantum machine learning?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Using quantum computers to enhance machine learning algorithms</div>
+                    <div class="option" data-correct="false">B) Learning about quantum physics</div>
+                    <div class="option" data-correct="false">C) Very small machine learning models</div>
+                    <div class="option" data-correct="false">D) Learning that happens very quickly</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Quantum ML leverages quantum computing properties for potentially faster learning.<br>
+                    B) ✗ Physics education is not quantum machine learning.<br>
+                    C) ✗ Model size is not related to quantum computing.<br>
+                    D) ✗ Speed alone doesn't define quantum machine learning.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">7. What is neuromorphic computing?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Computer hardware designed to mimic brain structure and function</div>
+                    <div class="option" data-correct="false">B) Computing that changes shape like morphing</div>
+                    <div class="option" data-correct="false">C) Computing for neuroscience research</div>
+                    <div class="option" data-correct="false">D) Computing with neural networks</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ Neuromorphic chips use brain-inspired architectures for efficient AI processing.<br>
+                    B) ✗ Shape-changing is not what neuromorphic means.<br>
+                    C) ✗ Research tools are applications, not neuromorphic computing itself.<br>
+                    D) ✗ Neural networks are software, neuromorphic is hardware design.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">8. What is the singularity in AI context?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) A hypothetical point where AI surpasses human intelligence</div>
+                    <div class="option" data-correct="false">B) When there's only one AI system left</div>
+                    <div class="option" data-correct="false">C) A black hole in space</div>
+                    <div class="option" data-correct="false">D) A unique solution to a problem</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ The technological singularity represents a potential future point of rapid AI advancement.<br>
+                    B) ✗ AI monopoly is market concentration, not the singularity.<br>
+                    C) ✗ Astronomical singularities are physics, not AI development.<br>
+                    D) ✗ Mathematical uniqueness is not the AI singularity concept.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">9. What is AI safety research focused on?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Ensuring AI systems are beneficial, safe, and aligned with human values</div>
+                    <div class="option" data-correct="false">B) Making sure AI hardware doesn't catch fire</div>
+                    <div class="option" data-correct="false">C) Protecting AI from computer viruses</div>
+                    <div class="option" data-correct="false">D) Workplace safety for AI researchers</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ AI safety research addresses risks and ensures beneficial AI development.<br>
+                    B) ✗ Hardware safety is engineering, not AI safety research.<br>
+                    C) ✗ Cybersecurity is important but not the focus of AI safety research.<br>
+                    D) ✗ Occupational safety is workplace health, not AI safety research.
+                </div>
+            </div>
+            
+            <div class="mcq-container">
+                <div class="question">10. What career opportunities exist in AI?</div>
+                <div class="options">
+                    <div class="option" data-correct="true">A) Research scientist, ML engineer, data scientist, AI ethicist, and many more</div>
+                    <div class="option" data-correct="false">B) Only programming jobs</div>
+                    <div class="option" data-correct="false">C) Only academic research positions</div>
+                    <div class="option" data-correct="false">D) Only jobs at big tech companies</div>
+                </div>
+                <button class="show-answers-btn" onclick="toggleAnswers(this)">Show Answers</button>
+                <div class="explanation answers-hidden">
+                    <strong>Correct Answer: A</strong><br>
+                    A) ✓ AI offers diverse career paths across research, engineering, ethics, policy, and applications.<br>
+                    B) ✗ AI careers extend far beyond just programming roles.<br>
+                    C) ✗ Industry offers many AI opportunities beyond academia.<br>
+                    D) ✗ AI jobs exist across companies of all sizes and sectors.
+                </div>
+            </div>
+        </div>
+     </div>
+     
+     <script>
+        function toggleAnswers(button) {
+            const explanation = button.nextElementSibling;
+            const options = button.parentElement.querySelectorAll('.option');
+            
+            if (explanation.classList.contains('answers-hidden')) {
+                explanation.classList.remove('answers-hidden');
+                button.textContent = 'Hide Answers';
+                
+                options.forEach(option => {
+                    if (option.dataset.correct === 'true') {
+                        option.classList.add('correct');
+                    } else {
+                        option.classList.add('incorrect');
+                    }
+                });
+            } else {
+                explanation.classList.add('answers-hidden');
+                button.textContent = 'Show Answers';
+                
+                options.forEach(option => {
+                    option.classList.remove('correct', 'incorrect');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
