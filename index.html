@@ -1,81 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Junior Artificial Intelligence Olympiad</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-        }
-        h2 {
-            color: #34495e;
-            margin-top: 30px;
-        }
-        ul {
-            margin: 15px 0;
-        }
-        li {
-            margin: 8px 0;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .links {
-            margin: 15px 0;
-        }
-        .links a {
-            display: inline-block;
-            margin: 5px 15px 5px 0;
-            padding: 8px 15px;
-            background-color: #3498db;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .links a:hover {
-            background-color: #2980b9;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NJAIO — National Junior Artificial Intelligence Olympiad</title>
+  <meta name="description" content="NJAIO overview, objectives, and links to Primary, Secondary and About." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>National Junior Artificial Intelligence Olympiad</h1>
-    
-    <h2>Scope</h2>
-    <ul>
-        <li>Programming & AI Fundamentals</li>
-        <li>Deep Learning & Neural Networks</li>
-        <li>Unsupervised Learning & AI Ethics</li>
-        <li>Generative AI</li>
-        <li>Real-world AI Applications</li>
-    </ul>
-    
-    <h2>Sample Problems (Theory)</h2>
-    <div class="links">
-        <a href="theory_pri.html">Primary</a>
-        <a href="theory_seca.html">Secondary/JC/Poly/ITE - Set A</a>
-        <a href="theory_secb.html">Secondary/JC/Poly/ITE - Set B</a>
-    </div>
-    
-    <h2>Sample Tasks (Practical)</h2>
-    <div class="links">
-        <a href="practical_pri.html">Primary</a>
-        <a href="practical_sec.html">Secondary/JC/Poly/ITE</a>
-    </div>
+  <div class="container">
+    <header>
+      <div class="brand" aria-label="Site brand">
+        <span class="brand-logo" aria-hidden="true">🧩</span>
+        <span>NJAIO — National Junior Artificial Intelligence Olympiad</span>
+      </div>
+      <nav aria-label="Main navigation">
+        <a class="nav-link" href="primary.html">Primary</a>
+        <a class="nav-link" href="secondary.html">Secondary</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="learn.html">Learn</a>
+        <button id="themeToggle" class="nav-link" type="button" aria-pressed="false" aria-label="Toggle dark and light mode">☀️</button>
+      </nav>
+    </header>
+
+    <section class="contrast-banner stacked" aria-label="Special theme announcement">
+      <div class="label">
+        2026 NJAIO Secondary Category emerging technology task theme:
+        <span class="icon" aria-hidden="true">🤖</span>
+        <strong>AI Agents</strong>
+      </div>
+      <details id="bannerAccordion">
+        <summary class="toggle" aria-label="Toggle additional information"></summary>
+        <div class="accordion-content">
+          <div style="font-weight:700">Lower Secondary (Grades 7 - 8):</div>
+          <ul class="list" style="margin:.35rem 0 .6rem">
+            <li>Define the agent loop (sense → plan → act) with clear goals and limits.</li>
+            <li>Build a simple rule‑based agent to complete a task; test edge cases.</li>
+            <li>Use human‑in‑the-loop approvals and privacy‑by‑design for safe actions.</li>
+          </ul>
+          <div style="font-weight:700">Upper Secondary (Grades 9 - 12):</div>
+          <ul class="list" style="margin:.35rem 0 0">
+            <li>Create a minimal LLM‑enabled agent with tool use and step‑wise planning.</li>
+            <li>Compare single vs multi‑agent designs; choose roles and coordination.</li>
+            <li>Evaluate with task success rate, error taxonomy, and cost/time trade‑offs.</li>
+            <li>Apply guardrails: permissions, sandboxing, rate limits, and transparent logs.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero" aria-label="Overview and highlights">
+      <div class="hero-card">
+        <h1 class="hero-title"><span aria-hidden="true">🤖</span> Overview</h1>
+        <p class="sub">NJAIO aspires to empower students to acquire and apply computational problem solving with AI thinking during their formative years so that they can be future-oriented, innovative and responsible problem solvers to impact positive change on the world.</p>
+      </div>
+      <div class="hero-card">
+        <h2 class="hero-title"><span aria-hidden="true">🎯</span> Objectives</h2>
+        <p class="lead">Leverage computational thinking plus AI thinking to develop the following problem solving mindset:</p>
+        <div class="list" aria-label="Objective pillars">
+          <div class="pill"><span aria-hidden="true">🧠</span> Analytical</div>
+          <div class="pill"><span aria-hidden="true">✨</span> Creative</div>
+          <div class="pill"><span aria-hidden="true">🛡️</span> Ethical</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Thinking frameworks">
+      <div class="card">
+        <h3><span class="icon" aria-hidden="true">⚙️</span> Computational Thinking</h3>
+        <p class="lead">Core pillars for systematic, effective and efficient problem solving.</p>
+        <ul class="list ct-list" aria-label="Computational thinking pillars">
+          <li>
+            <div class="ct-label"><span aria-hidden="true">🧩</span><strong>Decomposition</strong></div>
+            <div class="muted">Break down complex problems into manageable parts</div>
+          </li>
+          <li>
+            <div class="ct-label"><span aria-hidden="true">🧭</span><strong>Abstraction</strong></div>
+            <div class="muted">Filter noise and choose right level of detail</div>
+          </li>
+          <li>
+            <div class="ct-label"><span aria-hidden="true">🔍</span><strong>Pattern recognition</strong></div>
+            <div class="muted">Generalise from similarities and differences</div>
+          </li>
+          <li>
+            <div class="ct-label"><span aria-hidden="true">📜</span><strong>Algorithm design</strong></div>
+            <div class="muted">Clear steps toward automated solutions</div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="icon" aria-hidden="true">🧪</span> AI Thinking</h3>
+        <p class="lead">Augment computational thinking for probabilistic and data-informed contexts.</p>
+        <ul class="list">
+          <li><span aria-hidden="true">📊</span><strong>Data-informed</strong> (with noise)</li>
+          <li><span aria-hidden="true">🎲</span><strong>Non-deterministic</strong> (degrees of error)</li>
+          <li><span aria-hidden="true">🛡️</span><strong>Ethics & safety</strong> (judgement and decisions required)</li>
+        </ul>
+        <p class="muted" style="margin:.5rem 0 0">
+          Generative AI has accelerated and disrupted change across study, work, and life. AI literacy equips learners for a future shaped by probabilistic systems, where responsible use and critical thinking are essential.
+        </p>
+      </div>
+      <div class="card">
+        <h3><span class="icon" aria-hidden="true">🌍</span> Growing Up with AI</h3>
+        <p class="lead">Early awareness enables confident and responsible engagement with the real world.</p>
+        <ul class="list">
+          <li><span aria-hidden="true">👀</span> Recognise AI in daily life</li>
+          <li><span aria-hidden="true">🧠</span> Think critically about impact</li>
+          <li><span aria-hidden="true">🛠️</span> Solve creatively with AI tools</li>
+          <li><span aria-hidden="true">✅</span> Use AI responsibly and ethically</li>
+        </ul>
+        <p class="muted" style="margin:.5rem 0 0">
+          Inculcate and develop positive attitude, knowledge and skills to value add any domain and career with AI and technology.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="cta-row" aria-label="Quick links">
+        <a class="cta primary" href="primary.html"><span class="dot" aria-hidden="true"></span> Primary</a>
+        <a class="cta" href="secondary.html"><span class="dot" aria-hidden="true" style="background:var(--accent)"></span> Secondary</a>
+        <a class="cta" href="about.html"><span class="dot" aria-hidden="true" style="background:var(--accent-3)"></span> About</a>
+        <a class="cta" href="learn.html"><span class="dot" aria-hidden="true"></span> Learn</a>
+      </div>
+      <p style="margin:.75rem 0 0">© NJAIO / ComputingSG x SIMCC</p>
+    </footer>
+  </div>
+  <script>
+    (function() {
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      if (!btn) return;
+      const saved = localStorage.getItem('theme');
+      const apply = (mode) => {
+        const isLight = mode === 'light';
+        root.classList.toggle('theme-light', isLight);
+        btn.textContent = isLight ? '🌙' : '☀️';
+        btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+      };
+      apply(saved === 'light' ? 'light' : 'dark');
+      btn.addEventListener('click', () => {
+        const next = root.classList.contains('theme-light') ? 'dark' : 'light';
+        apply(next);
+        localStorage.setItem('theme', next);
+      });
+    })();
+  </script>
+  
 </body>
 </html>

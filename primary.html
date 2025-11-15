@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NJAIO — Primary</title>
+  <style>
+    :root{--bg1:#0f2b4f;--bg2:#123b73;--bg3:#0b1f3a;--panel:#132d4a;--text:#ffffff;--muted:#d6e6f5;--accent:#ffcb3c;--accent2:#7af0ff;--accent3:#ff7ab6}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif;background:
+      radial-gradient(40vw 40vw at 10% 10%, rgba(255,203,60,.25), transparent 60%),
+      radial-gradient(30vw 30vw at 90% 15%, rgba(122,240,255,.25), transparent 60%),
+      radial-gradient(45vw 45vw at 30% 85%, rgba(255,122,182,.25), transparent 60%),
+      linear-gradient(180deg, var(--bg1), var(--bg2))}
+    .wrap{max-width:1000px;margin:0 auto;padding:1.5rem 1rem 3rem}
+    header{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid rgba(255,255,255,.1);padding:1rem 0}
+    .brand{display:flex;gap:.6rem;align-items:center;font-weight:800;font-size:1.25rem}
+    nav{display:flex;gap:.6rem}
+    .link{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:999px;color:var(--text);padding:.5rem .9rem;text-decoration:none;backdrop-filter:saturate(140%) blur(4px)}
+    .link:hover{transform:translateY(-1px);background:rgba(255,255,255,.15)}
+    .hero{display:flex;align-items:center;gap:1rem;margin:1.25rem 0 1.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:1rem;padding:1rem 1.25rem}
+    .hero-emoji{font-size:2rem}
+    .hero h1{margin:0;font-size:1.6rem;letter-spacing:.3px}
+    .hero p{margin:.35rem 0 0;color:var(--muted)}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.12);border-radius:1rem;padding:1.25rem;box-shadow:0 12px 24px rgba(0,0,0,.25)}
+    .card h3{margin:0 0 .6rem;font-size:1.3rem}
+    .features{list-style:none;margin:0;padding:0}
+    .features>li{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:1rem;padding:1rem 1rem 1rem 3rem;margin:.7rem 0;position:relative}
+    .features>li .sec-icon{position:absolute;left:1rem;top:.9rem;font-size:1.3rem}
+    .features ul{list-style:none;margin:.4rem 0 0;padding:0}
+    .features ul li{margin:.35rem 0;padding-left:1.6rem;position:relative;color:var(--muted)}
+    .features ul li::before{content:"⭐";position:absolute;left:.2rem}
+    .paper-section{margin-top:1.5rem}
+    .two-col{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .paper-btn{display:block;margin:.6rem auto 0;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:.8rem;color:var(--text);text-decoration:none;padding:.7rem 1rem;font-weight:700;text-align:center}
+    .paper-btn:hover{background:rgba(255,255,255,.16);transform:translateY(-1px)}
+    .paper-card h3{color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span aria-hidden="true">🧒</span> For Primary School Students (Grades 1–6)</div>
+      <nav>
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="secondary.html">Secondary</a>
+        <a class="link" href="about.html">About</a>
+      </nav>
+    </header>
+    <div class="hero">
+      <div class="hero-emoji" aria-hidden="true">🌈</div>
+      <div>
+        <h1>Curious minds, friendly AI</h1>
+        <p>Playful pathways to recognise, think, create, and use AI responsibly.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="card">
+        
+        <p>NJAIO gives younger learners a gentle and playful introduction to AI concepts. At this stage, the benefits are:</p>
+        <ol class="features">
+          <li>
+            <span class="sec-icon" aria-hidden="true">🔎</span> Awareness &amp; Recognition
+            <ul>
+              <li>Students begin to spot AI in their daily lives (e.g., smart speakers, chatbots, recommendation systems).</li>
+              <li>They learn to distinguish automation vs true AI.</li>
+            </ul>
+          </li>
+          <li>
+            <span class="sec-icon" aria-hidden="true">🧠</span> Critical Thinking Foundations
+            <ul>
+              <li>Encourages pattern recognition, rule-building, and early understanding of fairness and bias in AI outputs.</li>
+              <li>Builds computational thinking through AI contexts (abstraction, decomposition, algorithmic logic).</li>
+            </ul>
+          </li>
+          <li>
+            <span class="sec-icon" aria-hidden="true">🎨</span> Creativity &amp; Imagination
+            <ul>
+              <li>Through tasks like “Design Your Robot” or pattern activities, students use creativity to connect AI ideas to their own world.</li>
+              <li>Promotes playful problem-solving with drawings, stories, and prototypes.</li>
+            </ul>
+          </li>
+          <li>
+            <span class="sec-icon" aria-hidden="true">🛡️</span> Responsible Use
+            <ul>
+              <li>Early exposure to ethics and safety (e.g., protecting privacy, choosing safe robot behaviours).</li>
+              <li>Encourages a responsible mindset about how technology should support people, not replace judgement.</li>
+            </ul>
+          </li>
+          <li>
+            <span class="sec-icon" aria-hidden="true">🚀</span> Future Orientation
+            <ul>
+              <li>Opens children’s imagination to possible AI careers and innovation pathways.</li>
+              <li>Builds early confidence in dealing with AI instead of fear or passive consumption.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="paper-section">
+      <div class="two-col">
+        <div class="card paper-card">
+          <h3><span aria-hidden="true">📄</span> Lower Primary (Grades 1–3)</h3>
+          <a class="paper-btn" href="primary_lower.html">Syllabus</a>
+          <a class="paper-btn" href="primary_lower.html#sample-paper">Sample Paper</a>
+        </div>
+        <div class="card paper-card">
+          <h3><span aria-hidden="true">📄</span> Upper Primary (Grades 4–6)</h3>
+          <a class="paper-btn" href="primary_upper.html">Syllabus</a>
+          <a class="paper-btn" href="primary_upper.html#sample-paper">Sample Paper</a>
+        </div>
+      </div>
+    </section>
+    <hr class="break" />
+    <footer>
+      <p style="margin:.75rem 0 0">© NJAIO / ComputingSG x SIMCC</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOAI Singapore 2025 MCQ</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .question h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .question-header .toggle-btn {
+            margin-left: auto;
+        }
+        .options {
+            margin: 15px 0;
+        }
+        .option {
+            margin: 8px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+        }
+        .option.correct {
+            background-color: #e8f5e8;
+            border-left-color: #27ae60;
+            font-weight: 600;
+        }
+        .answer {
+            background-color: #e8f5e8;
+            border-left: 3px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .toggle-btn {
+            background: linear-gradient(45deg, #27ae60, #1e8449);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95em;
+            margin: 10px 0;
+        }
+        .toggle-btn.hide {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+        .explanation {
+            background-color: #fff3cd;
+            border-left: 3px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+        .error {
+            color: #e74c3c;
+            background-color: #fdf2f2;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #e74c3c;
+        }
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+        .quiz-title {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .quiz-subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-header">
+            <h1 class="quiz-title">NOAI Singapore 2025 MCQ</h1>
+        </div>
+        
+        <div id="content">
+            <div class="loading">
+                <p>Loading assessment questions...</p>
+                <p>Please wait while we fetch the content.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class QuizParser {
+            constructor() {
+                this.container = document.getElementById('content');
+                this.questions = [];
+            }
+
+            async loadMarkdownFile(filename) {
+                try {
+                    const response = await fetch(filename);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${filename}: ${response.status} ${response.statusText}`);
+                    }
+                    return await response.text();
+                } catch (error) {
+                    throw new Error(`Error loading file: ${error.message}`);
+                }
+            }
+
+            parseQuestions(markdownText) {
+                const questions = [];
+                const lines = markdownText.split('\n');
+                
+                let currentQuestion = null;
+                let inOptions = false;
+                let currentSection = null;
+                
+                for (let line of lines) {
+                    line = line.trim();
+                    
+                    // Skip empty lines and horizontal rules
+                    if (line === '' || line === '---') continue;
+                    
+                    if (line.startsWith('## Question')) {
+                        if (currentQuestion) {
+                            questions.push(currentQuestion);
+                        }
+                        currentQuestion = {
+                            number: line.replace('## Question ', '').trim(),
+                            question: '',
+                            options: [],
+                            answer: '',
+                            explanation: ''
+                        };
+                        currentSection = 'question';
+                        inOptions = false;
+                    }
+                    else if (line.startsWith('**Answer:')) {
+                        if (currentQuestion) {
+                            currentQuestion.answer = line.replace('**Answer: ', '').replace('**', '');
+                            currentSection = 'explanation';
+                            inOptions = false;
+                        }
+                    }
+                    else if (line.startsWith('**') && line.endsWith('**')) {
+                        if (currentQuestion && currentSection === 'question' && !currentQuestion.question) {
+                            currentQuestion.question = line.replace(/\*\*/g, '');
+                            inOptions = true;
+                        }
+                    }
+                    else if (inOptions && (line.startsWith('A)') || line.startsWith('B)') || line.startsWith('C)') || line.startsWith('D)'))) {
+                        if (currentQuestion) {
+                            currentQuestion.options.push(line);
+                        }
+                    }
+                    else if (currentSection === 'explanation' && !line.startsWith('**')) {
+                        if (currentQuestion) {
+                            currentQuestion.explanation += (currentQuestion.explanation ? ' ' : '') + line;
+                        }
+                    }
+                }
+                
+                // Add the last question
+                if (currentQuestion) {
+                    questions.push(currentQuestion);
+                }
+                
+                return questions;
+            }
+
+            renderQuestions(questions) {
+                let html = '';
+                for (let i = 0; i < questions.length; i++) {
+                    const q = questions[i];
+                    html += `
+                        <div class=\"question\" id=\"q-${i}\">
+                            <h2>Question ${q.number}</h2>
+                            <p><strong>${q.question}</strong></p>
+                            <div class=\"options\">
+                                ${q.options.map(option => {
+                                    const m = option.match(/^([A-D])\)\s*/);
+                                    const letter = m ? m[1] : '';
+                                    return `<div class=\\\"option\\\" data-letter=\\\"${letter}\\\">${option}</div>`;
+                                }).join('')}
+                            </div>
+                            <button class=\"toggle-btn\" data-qidx=\"${i}\" data-answer-letter=\"${q.answer}\">Show Answer</button>
+                            ${q.explanation ? `<div id=\"ex-${i}\" class=\"explanation\" style=\"display:none;\">${q.explanation}</div>` : ''}
+                        </div>
+                    `;
+                }
+                return html;
+            }
+            attachAnswerToggle() {
+                const buttons = this.container.querySelectorAll('.toggle-btn');
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = btn.getAttribute('data-qidx');
+                        const rawAns = btn.getAttribute('data-answer-letter') || '';
+                        const ansLetter = rawAns.trim().slice(0,1).toUpperCase();
+                        const ex = document.getElementById(`ex-${idx}`);
+                        const container = document.getElementById(`q-${idx}`);
+                        const options = container ? container.querySelectorAll('.option') : [];
+                        let target;
+                        options.forEach(o => {
+                            const optLetter = (o.getAttribute('data-letter') || o.textContent.trim().charAt(0)).toUpperCase();
+                            if (optLetter === ansLetter) {
+                                target = o;
+                            }
+                        });
+                        const currentlyHighlighted = target && target.classList.contains('correct');
+                        if (target) {
+                            if (currentlyHighlighted) {
+                                target.classList.remove('correct');
+                            } else {
+                                options.forEach(o => o.classList.remove('correct'));
+                                target.classList.add('correct');
+                            }
+                        }
+                        if (ex) ex.style.display = currentlyHighlighted ? 'none' : 'block';
+                        btn.textContent = currentlyHighlighted ? 'Show Answer' : 'Hide Answer';
+                        if (currentlyHighlighted) {
+                            btn.classList.remove('hide');
+                        } else {
+                            btn.classList.add('hide');
+                        }
+                    });
+                });
+            }
+
+            attachHeaderLayout() {
+                const qs = this.container.querySelectorAll('.question');
+                qs.forEach(q => {
+                    const h2 = q.querySelector('h2');
+                    const btn = q.querySelector('.toggle-btn');
+                    if (h2 && btn) {
+                        const header = document.createElement('div');
+                        header.className = 'question-header';
+                        header.appendChild(h2);
+                        header.appendChild(btn);
+                        q.insertBefore(header, q.firstChild);
+                    }
+                });
+            }
+
+            renderQuestionsClean(questions) {
+                let html = '';
+                for (let i = 0; i < questions.length; i++) {
+                    const q = questions[i];
+                    const optionsHtml = q.options.map(option => {
+                        const m = option.match(/^([A-D])\)\s*/);
+                        const letter = m ? m[1] : '';
+                        return `<div class="option" data-letter="${letter}">${option}</div>`;
+                    }).join('');
+                    html += `
+                        <div class="question" id="q-${i}">
+                            <div class="question-header">
+                                <h2>Question ${q.number}</h2>
+                                <button class="toggle-btn" data-qidx="${i}" data-answer-letter="${q.answer}">Show Answer</button>
+                            </div>
+                            <p><strong>${q.question}</strong></p>
+                            <div class="options">${optionsHtml}</div>
+                            ${q.explanation ? `<div id="ex-${i}" class="explanation" style="display:none;">${q.explanation}</div>` : ''}
+                        </div>`;
+                }
+                return html;
+            }
+
+            async loadAndDisplay(filename) {
+                try {
+                    this.container.innerHTML = '<div class="loading"><p>Loading questions...</p></div>';
+                    
+                    const markdownText = await this.loadMarkdownFile(filename);
+                    const questions = this.parseQuestions(markdownText);
+                    
+                    if (questions.length === 0) {
+                        throw new Error('No questions found in the file');
+                    }
+                    
+                    const html = this.renderQuestionsClean(questions);
+                    this.container.innerHTML = html;
+                    this.attachAnswerToggle();
+                    // header already rendered in Clean version
+                    
+                    console.log(`Successfully loaded ${questions.length} questions`);
+                    
+                } catch (error) {
+                    this.container.innerHTML = `<div class=\"error\"><strong>Error:</strong> ${error.message}</div>`;
+                    console.error('Failed to load quiz:', error);
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const quiz = new QuizParser();
+            quiz.loadAndDisplay('noai25_js_ready.md')
+                .catch(error => {
+                    console.error('Failed to load primary file, trying backup:', error);
+                    return quiz.loadAndDisplay('noaisg25mcq.md');
+                });
+        });
+    </script>
+</body>
+</html>
