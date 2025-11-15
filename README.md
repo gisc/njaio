@@ -8,7 +8,7 @@ Static site with pages for Primary, Secondary, About, and Learn.
 - `primary.html` — Primary category overview
 - `secondary.html` — Secondary category overview
 - `about.html` — About NJAIO
-- `learn.html` — age‑appropriate AI learning resources (Grades 1–3, 4–6, 7–9, 10–12)
+- `learn.html` — age‑appropriate AI learning resources (Grades 1–3, 4–6, 7–8, 9–12)
 
 ## View Locally
 
